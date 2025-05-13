@@ -1,0 +1,64 @@
+.page {
+  background-color: #0d0d0d;
+  color: white;
+  font-family: sans-serif;
+  padding: 20px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.highlight {
+  color: #ff5c35;
+}
+
+.menu {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+}
+
+.button-orange {
+  background-color: #ff5c35;
+  border: none;
+  padding: 0.5em 1em;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.search {
+  margin: 2rem 0;
+}
+
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag {
+  padding: 0.5rem 1rem;
+  background: #1c1c1c;
+  border-radius: 20px;
+  border: none;
+  color: white;
+}
+
+.tag.active {
+  background: white;
+  color: black;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.image-card img {
+  width: 100%;
+  border-radius: 10px;
+}
