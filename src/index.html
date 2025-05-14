@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>THE SHOOT</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="page__header header">
+        <div class="header__logo">
+          THE <span class="header__logo-highlight">SHOOT</span>
+        </div>
+        <nav class="header__nav">
+          <ul class="header__menu menu">
+            <li class="menu__item"><a class="menu__link" href="#">ABOUT</a></li>
+            <li class="menu__item"><a class="menu__link" href="#">TALENTS</a></li>
+            <li class="menu__item">
+              <button class="menu__button button button--orange">I'm photographer</button>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <main class="page__main main">
+        <h1 class="main__title">THE SHOOT</h1>
+        <p class="main__description">
+          Discover and connect with professional photographers effortlessly.
+          Browse portfolios, filter by specialty, location, and style, and find
+          your perfect match.
+        </p>
+
+        <div class="main__search search">
+          <input
+            class="search__input"
+            type="text"
+            placeholder="Enter city or photographer name or category"
+          />
+          <button class="search__button button">Search</button>
+        </div>
+
+        <div class="main__categories categories">
+          <button class="categories__tag categories__tag--active">All</button>
+          <button class="categories__tag">Nature & Wildlife</button>
+          <button class="categories__tag">Event</button>
+          <button class="categories__tag">Portrait</button>
+          <button class="categories__tag">Videography</button>
+          <button class="categories__tag">Commercial</button>
+          <button class="categories__tag">Special effects & Experimental</button>
+          <button class="categories__tag">Pet Photography</button>
+          <button class="categories__tag">Boudoir & Glamour</button>
+        </div>
+
+        <div class="main__gallery gallery">
+          <div class="gallery__item image-card">
+            <img class="image-card__image" src="https://images.unsplash.com/photo-1" alt="photo1" />
+            <p class="image-card__name">Alex Shevchenko</p>
+          </div>
+          <div class="gallery__item image-card">
+            <img class="image-card__image" src="https://images.unsplash.com/photo-2" alt="photo2" />
+            <p class="image-card__name">Yuki Nakamura</p>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
