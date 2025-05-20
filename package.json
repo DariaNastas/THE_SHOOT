@@ -3,16 +3,16 @@
   "version": "1.0.0",
   "scripts": {
     "start": "parcel ./src/index.html --open",
-    "build": "parcel build --public-url=/dist/",
+    "build": "parcel build src/index.html --public-url /dist/",
     "deploy": "gh-pages -d dist -b develop"
   },
   "devDependencies": {
-    "@parcel/transformer-sass": "^2.15.0",
+    "@parcel/transformer-sass": "^2.15.1",
+    "cssnano": "^7.0.7",
     "gh-pages": "^6.3.0",
-    "parcel": "^2.12.0"
-  },
-  "dependencies": {
-    "sass": "^1.88.0"
+    "parcel": "^2.15.1",
+    "postcss": "^8.5.3",
+    "sass": "^1.89.0"
   },
   "repository": {
     "url": "git+https://github.com/fe1-fx-team-project-158/TheShoot.git"
@@ -24,5 +24,5 @@
   "bugs": {
     "url": "https://github.com/fe1-fx-team-project-158/TheShoot/issues"
   },
-  "homepage": "https://github.com/fe1-fx-team-project-158/TheShoot#readme"
+  "homepage": "https://github.com/DariaNastas.io/fe1-fx-team-project-158"
 }
