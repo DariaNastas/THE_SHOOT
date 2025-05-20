@@ -1,19 +1,116 @@
+@use "./utils/variables.scss" as variables;
+
 @use "./blocks/page.scss";
 @use "./blocks/top-bar.scss";
 @use "./blocks/container.scss";
 @use "./blocks/footer.scss";
 @use "./blocks/header.scss";
 
-.center_block {
-  text-align: center;
-  padding: 80px 40px 160px;
-
-  h1 {
-    margin: 160px auto 24px;
+.about {
+  &__arrow {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    top: 85px;
+    left: 40px;
+    z-index: 10;
+    pointer-events: auto;
+    cursor: pointer;
   }
 
-  &__paragraph {
-    max-width: 600px;
-    margin: 0 auto 40px;
+  &__title {
+    text-align: center;
+    margin: 0;
+    padding: 136px 40px 64px;
+  }
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, auto);
+  gap: 16px;
+  padding: 0 40px 96px 155px;
+  background-color: variables.$background-color;
+
+  &__heading {
+    grid-column: 3 / 5;
+    grid-row: 1;
+    color: variables.$color-white;
+    font-size: clamp(18px, 2.5vw, 28px);
+    line-height: 1.4;
+  }
+
+  &__word {
+    font-size: clamp(40px, 10vw, 120px);
+    font-weight: bold;
+    color: variables.$grey-scale-very-dark-100;
+    margin: 0;
+    line-height: 1;
+
+    &--flexible {
+      grid-column: 1 / 3;
+      grid-row: 2;
+    }
+
+    &--professional {
+      grid-column: 2 / 5;
+      grid-row: 3;
+    }
+
+    &--local {
+      grid-column: 1 / 4;
+      grid-row: 4;
+    }
+  }
+
+  &__description {
+    grid-column: 3 / 5;
+    grid-row: 2;
+    color: variables.$grey-scale-light-60;
+    font-size: clamp(14px, 2vw, 18px);
+    line-height: 1.6;
+  }
+
+  &__booking {
+    grid-column: 1 / 2;
+    grid-row: 3;
+    color: variables.$grey-scale-light-60;
+    font-size: clamp(13px, 1.8vw, 16px);
+    line-height: 1.6;
+  }
+
+  &__trusted {
+    grid-column: 4 / 5;
+    grid-row: 4;
+    color: variables.$grey-scale-light-60;
+    font-size: clamp(13px, 1.8vw, 16px);
+    line-height: 1.6;
+  }
+
+  &__find-top {
+    grid-column: 3 / 4;
+    grid-row: 5;
+    color: variables.$grey-scale-light-60;
+    font-size: clamp(13px, 1.8vw, 16px);
+    line-height: 1.6;
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+
+    &__word {
+      text-align: center;
+    }
+
+    &__heading,
+    &__description,
+    &__booking,
+    &__trusted,
+    &__find-top {
+      grid-column: auto;
+      text-align: center;
+    }
   }
 }
