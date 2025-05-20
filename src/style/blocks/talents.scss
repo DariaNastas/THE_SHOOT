@@ -1,0 +1,75 @@
+@use "../utils/index" as *;
+
+.talents {
+  display: flex;
+  justify-content: space-between;
+  padding: 96px 40px 100px;
+
+  &__content {
+    max-width: 50%;
+  }
+
+  &__title {
+    margin: 0 0 8px;
+  }
+
+  &__subtitle {
+    padding: 0 0 40px;
+    margin: 0;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    &-item {
+      font-size: var(--h3-size);
+      line-height: var(--h3-line-height);
+      letter-spacing: var(--h3-letter-spacing);
+      font-weight: var(--h3-font-weight);
+      margin: 0 0 40px;
+      color: #fff;
+      cursor: pointer;
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      &:active {
+        color: $primary-color;
+        text-decoration: none;
+      }
+
+      &--active {
+        color: $primary-color;
+      }
+    }
+  }
+
+  &__image {
+    position: relative;
+    padding-top: 172px;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__image-wrapper {
+    width: 480px;
+    height: 640px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    img {
+      width: 80%;
+      height: auto;
+      display: block;
+      object-fit: contain;
+      box-shadow: -44px -44px 0 -20px $primary-color,
+        0 -44px 0 -20px $primary-color, -44px 0 0 -20px $primary-color;
+    }
+  }
+}

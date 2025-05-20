@@ -1,0 +1,19 @@
+@use "./blocks/page.scss";
+@use "./blocks/top-bar.scss";
+@use "./blocks/container.scss";
+@use "./blocks/footer.scss";
+@use "./blocks/header.scss";
+
+.center_block {
+  text-align: center;
+  padding: 80px 40px 160px;
+
+  h1 {
+    margin: 160px auto 24px;
+  }
+
+  &__paragraph {
+    max-width: 600px;
+    margin: 0 auto 40px;
+  }
+}

@@ -1,0 +1,77 @@
+@use "../utils/index" as *;
+
+.footer {
+  background-color: $grey-scale-very-dark-100;
+  color: white;
+  padding: 75px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  &-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+  }
+
+  &-center {
+    flex: 1;
+    text-align: start;
+  }
+
+  &-title {
+    font-size: 180px;
+    color: $grey-scale-light-60;
+    font-weight: bold;
+    margin: 0;
+
+    @media (max-width: 1200px) {
+      font-size: 120px;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 80px;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 50px;
+    }
+  }
+
+  &-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 24px;
+
+    .footer-photo {
+      width: 100px;
+      height: auto;
+      border-radius: 8px;
+      border: 1px solid white;
+    }
+
+    .footer-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      text-align: right;
+
+      li {
+        margin: 0;
+
+        a {
+          color: $grey-scale-light-60;
+          text-decoration: none;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}

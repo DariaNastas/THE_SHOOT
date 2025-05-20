@@ -1,0 +1,67 @@
+@use "../utils/index" as *;
+
+.top-bar {
+  //padding-block: 40px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__logo {
+    width: 80px;
+    height: auto;
+
+    @include hover(transform, scale(1.2));
+
+    @include on-tablet {
+      width: 120px;
+    }
+
+    @include on-desktop {
+      width: 160px;
+    }
+  }
+
+  &__nav {
+    padding-right: 40px;
+    ul {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    a {
+      text-transform: uppercase;
+      font-weight: 400;
+      color: $color-white;
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.3s;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    // стилізація кнопки "I'm Photographer"
+    li:last-child a {
+      background-color: $primary-color;
+      color: $color-white;
+      padding: 8px 16px;
+      border-radius: 30px;
+      font-weight: 500;
+      transition: background-color 0.3s, transform 0.2s;
+
+      &:hover {
+        background-color: $primary-color-hover;
+        transform: translateY(-2px);
+        text-decoration: none;
+      }
+
+      &:focus {
+        background-color: $primary-color-disabled;
+      }
+    }
+  }
+}

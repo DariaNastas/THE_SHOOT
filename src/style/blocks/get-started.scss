@@ -1,0 +1,84 @@
+@use "../utils/index" as *;
+
+.get-started {
+  padding: 0 50px 96px;
+  text-align: center;
+
+  &__title {
+    margin: 0;
+  }
+
+  &__description {
+    margin: 16px 0 40px;
+  }
+
+  &__steps {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    grid-template-rows: repeat(3, auto);
+    gap: 20px;
+    position: relative;
+  }
+
+  &__image {
+    grid-column: 2;
+    grid-row: 1 / 4;
+    justify-self: center;
+    align-self: center;
+    max-width: 150px;
+    height: auto;
+  }
+
+  &__step {
+    text-align: center;
+    padding: 10px 0 20px;
+    box-sizing: border-box;
+
+    h3 {
+      margin: 0 0 4px;
+    }
+
+    &--right {
+      grid-column: 3;
+      grid-row: 1;
+      text-align: left;
+    }
+
+    &--left {
+      grid-column: 1;
+      grid-row: 2;
+      text-align: right;
+    }
+
+    &--right-secondary {
+      grid-column: 3;
+      grid-row: 3;
+      text-align: left;
+    }
+  }
+
+  &__cta {
+    display: inline-block;
+    margin: 36px auto;
+    padding: 8px 16px;
+    font-size: 16px;
+    background-color: $primary-color;
+    border-radius: 30px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transform: translateX(-16px);
+    position: relative;
+
+    &:hover {
+      background-color: $primary-color-hover;
+      transform: translateX(-16px);
+      text-decoration: none;
+    }
+
+    &:focus {
+      background-color: $primary-color-disabled;
+      transform: translateX(-16px);
+    }
+  }
+}

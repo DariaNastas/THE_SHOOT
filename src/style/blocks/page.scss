@@ -1,0 +1,7 @@
+@use "../utils/index" as *;
+
+html {
+  font-family: "Poppins", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: $background-color;
+  color: $color-white;
+}

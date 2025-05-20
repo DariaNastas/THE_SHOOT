@@ -1,0 +1,22 @@
+@use "../utils/index" as *;
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 0 40px;
+  gap: 20px;
+
+  &__item {
+    position: relative;
+    width: 100%;
+    height: 840px;
+    overflow: hidden;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
