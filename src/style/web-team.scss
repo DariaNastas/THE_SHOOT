@@ -1,0 +1,80 @@
+@use "./utils/variables.scss" as variables;
+
+@use "utils/index";
+@use "./blocks/page.scss";
+@use "./blocks/top-bar.scss";
+@use "./blocks/container.scss";
+@use "./blocks/footer.scss";
+@use "./blocks/header.scss";
+@use "./blocks/talents.scss";
+@use "./main_talents.scss";
+
+.profile-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: variables.$background-color;
+  color: variables.$color-white;
+  padding: 128px 40px 480px;
+  gap: 40px;
+
+  &__info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__name {
+    font-weight: bold;
+    margin: 0;
+  }
+
+  &__role {
+    color: variables.$grey-scale-light-60;
+    margin: 0;
+  }
+
+  &__description {
+    color: variables.$grey-scale-light-60;
+    margin: 0;
+  }
+
+  &__contacts {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 40px;
+
+    a {
+      color: variables.$color-white;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      img {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+
+  &__photo {
+    flex: 0 0 432px;
+    height: 360px;
+    background-color: variables.$grey-scale-light-60;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 160px;
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+  }
+}

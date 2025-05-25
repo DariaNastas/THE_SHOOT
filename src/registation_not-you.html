@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  class="page"
+>
+<head>
+  <meta charset="UTF-8">
+  <meta 
+    name="viewport" 
+    content="width=device-width, initial-scale=1.0"
+  />
+  <title>THE SHOOT</title>
+  <link
+      rel="icon"
+      href="images/logo-theShoot.png"
+      type="image/x-icon"
+    />
+  <link 
+    rel="stylesheet" 
+    href="style/registation_not-you.scss"
+  />
+  <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" 
+      rel="stylesheet"
+  />
+  <script
+      src="scripts/main.js"
+      defer
+  ></script>
+</head>
+<body class="page__body">     
+  <main>
+    <section class="auth">
+  <div class="auth__container">
+    <div class="auth__content">
+      <a href="./index.html" class="arrow-link">
+        <img
+              src="images/back-arrow.png"
+              alt="Navigate-back-arrow"
+              class="about__arrow"              
+        />
+      </a>
+      <img src="./images/logo-theShoot.png" alt="The Shoot" class="auth__logo" />
+
+      <p class="auth__description">
+        We sent a temporary login code to <br>
+        AlexShevchenko@gmail.com
+      </p>
+
+      <p class="auth__text">
+        Not you?
+      </p>
+      <input 
+        type="number" 
+        placeholder="Enter code"  
+        class="auth__input-code is-error" 
+        min="100000"
+        max="999999"
+        step="1"
+        placeholder="Enter a number"
+        required
+
+      />
+
+      <button class="auth__button auth__button--continue">
+        <a href="./profile.html" class="auth__button-text">Continue</a>
+    </button>
+
+      <p class="auth__login">
+        Already have an account? 
+        <a href="#" class="auth__login-link">Log in</a>
+      </p>
+    </div>
+
+    <div class="auth__gallery">
+      <img src="./images/сollage_registration.png" alt="Gallery collage" class="auth__gallery-image" />
+    </div>
+  </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-center">
+        <h1 class="footer-title">THE SHOOT</h1>
+      </div>
+      <div class="footer-right">
+        <img src="./images/logo-theShoot.png" alt="logo" class="footer-photo">
+        <ul class="footer-links">
+          <li><a href="./about.html">ABOUT</a></li>
+          <li><a href="./main_talents.html">TALENTS</a></li>
+          <li><a href="./web-team.html">WEB TEAM</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

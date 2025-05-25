@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  class="page"
+>
+<head>
+  <meta charset="UTF-8">
+  <meta 
+    name="viewport" 
+    content="width=device-width, initial-scale=1.0"
+  />
+  <title>THE SHOOT</title>
+  <link
+      rel="icon"
+      href="images/logo-theShoot.png"
+      type="image/x-icon"
+    />
+  <link 
+    rel="stylesheet" 
+    href="style/profile.scss"
+  />
+  <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" 
+      rel="stylesheet"
+  />
+  <script
+      src="scripts/main.js"
+      defer
+  ></script>
+</head>
+<body class="page__body">    
+    <header id="header" class="header">
+    <div class="container">
+      <div class="top-bar">
+          <img
+            src="images/logo-theShoot.png"
+            alt="logo-theShoot"
+            class="top-bar__logo"               
+          />          
+          <a href="#" class="auth__photographer-link">Update</a>
+      </div> 
+      
+     
+    </div> 
+  </header> 
+  <main>
+    <section class="auth">
+      <div class="auth__container">
+        <div class="auth__header">
+          <div class="auth__left">
+            <div class="auth__nav">
+              <a href="./index.html" class="arrow-link">
+                <img
+                  src="images/back-arrow.png"
+                  alt="Navigate-back-arrow"
+                  class="about__arrow"
+                />
+              </a>
+            </div>
+
+            <p class="auth__description">
+              <a href="./index.html" class="auth__description">Back to main page</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="profile-form">
+        <h3 class="profile-form__title">Create a profile of photographer</h3>
+
+        <div class="profile-form__main">
+            <label class="profile-form__photo-upload">
+            <input type="file" accept="image/*" hidden />
+            <span class="profile-form__upload-icon"> 
+                <img 
+                src="./images/icon-download.png" 
+                alt="icon-download"
+                />
+            </span>
+            <span>Add your photo</span>
+            </label>
+
+            <div class="profile-form__fields">
+            <p class="profile-form__text">Name and Surname</p>
+            <input type="text" placeholder="Alex Shevchenko" class="profile-form__input" />
+            <p class="profile-form__text">Location</p>
+            <input type="text" placeholder="Ukraine, Kyiv" class="profile-form__input" />
+            <p class="profile-form__text">Email</p>
+            <input type="email" placeholder="Alex.Shevchenko@gmail.com" class="profile-form__input" />
+            <p class="profile-form__text">Phone number</p>
+            <input type="tel" placeholder="+38 0xx xxx xx xx" class="profile-form__input" />
+            <p class="profile-form__text">Price starts from (in USD)</p>
+            <input type="number" placeholder="numeral" class="profile-form__input" />
+            <p class="profile-form__text">Add a short bio</p>
+            <textarea placeholder="Add a short presentation to showcase your style and personality" class="profile-form__textarea"></textarea>
+            </div>
+        </div>
+
+        <p class="profile-form__subtitle">Upload your best photos</p>
+
+        <div class="profile-form__gallery">
+            <label class="profile-form__photo-slot">
+            <input type="file" accept="image/*" hidden />
+            <span>+</span>
+            </label>
+            <label class="profile-form__photo-slot">
+            <input type="file" accept="image/*" hidden />
+            <span>+</span>
+            </label>
+            <label class="profile-form__photo-slot">
+            <input type="file" accept="image/*" hidden />
+            <span>+</span>
+            </label>
+            <label class="profile-form__photo-slot">
+            <input type="file" accept="image/*" hidden />
+            <span>+</span>
+            </label>
+            <label class="profile-form__photo-slot">
+            <input type="file" accept="image/*" hidden />
+            <span>+</span>
+            </label>
+            <label class="profile-form__photo-slot">
+            <input type="file" accept="image/*" hidden />
+            <span>+</span>
+            </label>
+        </div>
+        <section class="profile-form__button">
+          <button class="profile-form__button--cancel">Cancel</button>
+          <button 
+            id="createProfileBtn"
+            class="profile-form__button--create" 
+            type="button">
+            Create profile
+          </button>
+        </section>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-center">
+        <h1 class="footer-title">THE SHOOT</h1>
+      </div>
+      <div class="footer-right">
+        <img src="./images/logo-theShoot.png" alt="logo" class="footer-photo">
+        <ul class="footer-links">
+          <li><a href="./about.html">ABOUT</a></li>
+          <li><a href="./main_talents.html">TALENTS</a></li>
+          <li><a href="./web-team.html">WEB TEAM</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

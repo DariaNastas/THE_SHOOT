@@ -1,5 +1,9 @@
 @use "./utils/index" as *;
 
+@use "./about.scss";
+@use "./main_talents.scss";
+@use "./registation.scss";
+@use "./web-team.scss";
 @use "./blocks/gallery.scss";
 @use "./blocks/top-bar";
 @use "./blocks/header";
@@ -12,6 +16,4 @@
 @use "./blocks/get-started.scss";
 @use "./blocks/talents.scss";
 @use "./blocks/footer.scss";
-@use "./about.scss";
-@use "./main_talents.scss";
-@use "./registation_Flow.scss";
+@use "./talents_AS.scss";

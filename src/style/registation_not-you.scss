@@ -1,0 +1,49 @@
+@use "./utils/variables.scss" as variables;
+
+@use "utils/index";
+@use "./blocks/page.scss";
+@use "./blocks/footer.scss";
+@use "./about.scss";
+@use "./registation.scss";
+
+.auth {
+  &__text {
+    text-align: center;
+    color: variables.$grey-scale-light-60;
+  }
+
+  &__login {
+    margin: 40px 0 304px 0;
+    color: variables.$grey-scale-light-60;
+    text-align: center;
+  }
+
+  &__input-code {
+    color: variables.$color-white;
+    cursor: pointer;
+    background-color: variables.$grey-scale-very-dark-100;
+    border: 1px solid variables.$grey-scale-dark-80;
+    border-radius: 30px;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 16px;
+    transition: background-color 0.2s;
+    display: flex;
+    max-width: 440px;
+    height: 24px;
+    margin: 8px 144px 0;
+
+    &.is-error {
+      border: 1px solid variables.$primary-color-hover;
+    }
+
+    &::placeholder {
+      color: variables.$grey-scale-light-60;
+    }
+  }
+
+  &__button-text {
+    color: variables.$color-white;
+    text-decoration: none;
+  }
+}

@@ -29,24 +29,31 @@
   ></script>
 </head>
 <body class="page__body">
-  <header id="header" class="header">
-    <div class="container">
-      <div class="top-bar">
-          <img
-            src="images/logo-theShoot.png"
-            alt="logo-theShoot"
-            class="top-bar__logo"               
-          />
-          <nav class="top-bar__nav top-bar__nav--list">
-            <ul>
-              <li><a href="./about.html">About</a></li>
-              <li><a href="./main_talents.html">Talents</a></li>
-              <li><a href="./registation_Flow.html">I'm Photographer</a></li>
-            </ul>
-          </nav>
-      </div>      
-    </div> 
-  </header>
+<header id="header" class="header">
+  <div class="container">
+    <div class="top-bar">
+      <img
+        src="images/logo-theShoot.png"
+        alt="logo-theShoot"
+        class="top-bar__logo"
+      />
+      <nav class="top-bar__nav top-bar__nav--list">
+        <ul>
+          <li><a href="./about.html">About</a></li>
+          <li><a href="./main_talents.html">Talents</a></li>
+
+          <li class="user-menu">
+            <a href="#" class="photographer-link">I'm Photographer</a>
+            <div class="user-menu__dropdown">
+              <a href="./registation.html" class="user-menu__link">Set Up Profile</a>
+              <a href="./registation_not-you.html" class="user-menu__link--log">Log In</a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
   <main>
     <section class="hero">
       <h1 class="hero__title">THE SHOOT</h1>
@@ -79,22 +86,15 @@
       </div>
     </section>
 
-    <section class="filters">
-      <button class="filter">All</button>
-      <button class="filter">Nature & Wildlife</button>
+    <section class="filters"> 
+      <button class="filter">All</button>    
       <button class="filter">Event</button>
       <button class="filter">Portrait</button>
-      <button class="filter">Videography</button>
       <button class="filter">Commercial</button>
-      <button class="filter">Special effects & Experimental</button>
-      <button class="filter">Pet Photography</button>
       <button class="filter">Boudoir & Fashion</button>
-      <button class="filter">Seasonal & Holiday</button>
-      <button class="filter">Artistic & Spesialty</button>
-      <button class="filter">Sports</button>
       <button class="filter">Famyly</button>
       <button class="filter">Love story</button>
-      <button class="filter">Baby</button>      
+      <button class="filter">Wedding</button>      
     </section>
 
     <section class="gallery">
@@ -118,7 +118,9 @@
         <h5 class="talents__subtitle">PROFESSIONAL PHOTOGRAPHER READY <br>
           TO CAPTURE YOUR MOMENTS</h5>
         <ul class="talents__list">
-          <li class="talents__list-item talents__list-item--active">ALEX SHEVCHENKO</li>
+          <li class="talents__list-item">
+            <a class="talents__list-item talents__list-item--active" href="./talents_AS.html">ALEX SHEVCHENKO</a>
+          </li>
           <li class="talents__list-item">OLGA SHIRKO</li>
           <li class="talents__list-item">ADAM FINAGH</li>
           <li class="talents__list-item">OLIVER BROOK</li>
@@ -161,7 +163,7 @@
         </div>
       </div>    
  
-      <button class="get-started__cta">I'm Photographer</button>        
+      <a href="./registation.html" class="get-started__cta">I'm Photographer</a>        
       
       <h3 class="get-started__title">WELCOME TO YOUR </br>PHOTOGRAPHY JOURNEY</h3>
     </section>
@@ -175,9 +177,9 @@
       <div class="footer-right">
         <img src="./images/logo-theShoot.png" alt="logo" class="footer-photo">
         <ul class="footer-links">
-          <li><a href="#">Contacts</a></li>
-          <li><a href="#">Terms and conditions</a></li>
-          <li><a href="#">Website creation team</a></li>
+          <li><a href="./about.html">ABOUT</a></li>
+          <li><a href="./main_talents.html">TALENTS</a></li>
+          <li><a href="./web-team.html">WEB TEAM</a></li>
         </ul>
       </div>
     </div>

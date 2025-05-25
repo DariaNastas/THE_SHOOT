@@ -1,0 +1,230 @@
+@use "./utils/variables.scss" as variables;
+
+@use "utils/index";
+@use "./about.scss";
+@use "./blocks/page.scss";
+@use "./blocks/footer.scss";
+@use "./blocks/container.scss";
+@use "./blocks/top-bar.scss";
+
+.top-bar {
+  padding: 0 40px 0 0;
+}
+
+.auth {
+  padding: 84px 40px 24px;
+  margin: 0;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__left {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+
+  &__description {
+    text-align: left;
+    color: variables.$grey-scale-light-60;
+    text-decoration: none;
+  }
+
+  &__photographer-link {
+    background-color: variables.$primary-color;
+    color: variables.$color-white;
+    padding: 8px;
+    border-radius: 30px;
+    font-weight: 500;
+    text-decoration: none;
+    text-align: center;
+    width: 208px;
+    transition: background-color 0.3s, transform 0.2s;
+
+    &:hover {
+      background-color: variables.$primary-color-hover;
+      text-decoration: none;
+    }
+
+    &:focus {
+      background-color: variables.$primary-color-disabled;
+    }
+  }
+}
+
+.profile-form {
+  background-color: variables.$background-color;
+  color: variables.$color-white;
+  padding: 0 40px;
+
+  &__title {
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0 0 24px;
+  }
+
+  &__main {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+
+  &__photo-upload {
+    background-color: variables.$grey-scale-light-60;
+    width: 675px;
+    height: 704px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    gap: 12px;
+    cursor: pointer;
+    text-align: center;
+    color: variables.$grey-scale-dark-80;
+
+    input {
+      display: none;
+    }
+  }
+
+  &__upload-icon {
+    width: 72px;
+    height: 72px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  &__fields {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    //max-width: 440px;
+    flex-grow: 1;
+  }
+
+  &__text {
+    margin: 0;
+    color: variables.$grey-scale-light-60;
+    font-size: 12px;
+  }
+
+  &__input,
+  &__textarea {
+    background-color: variables.$grey-scale-very-dark-100;
+    border: 1px solid variables.$grey-scale-dark-80;
+    color: variables.$grey-scale-light-60;
+    border-radius: 30px;
+    width: 96%s;
+    height: 24px;
+    padding: 12px 16px;
+
+    &::placeholder {
+      color: variables.$grey-scale-light-60;
+    }
+  }
+
+  &__textarea {
+    height: 100%;
+    resize: none;
+  }
+
+  &__subtitle {
+    margin: 48px 0 24px;
+    color: variables.$grey-scale-light-60;
+  }
+
+  &__gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 100%;
+    margin-top: 24px;
+    padding: 0 0 40px 0;
+  }
+
+  &__photo-slot {
+    aspect-ratio: 1;
+    cursor: pointer;
+    background-color: variables.$grey-scale-light-60;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    width: 100%;
+    height: auto;
+
+    & input {
+      display: none;
+    }
+  }
+
+  &__button {
+    display: flex;
+    gap: 16px;
+    justify-content: right;
+    margin: 0 0 96px;
+
+    &--cancel {
+      background-color: variables.$grey-scale-very-dark-100;
+      color: variables.$color-white;
+      border: 2px solid variables.$primary-color;
+      border-radius: 30px;
+      padding: 5px 15px;
+      font-size: var(--button-size);
+      height: 48px;
+      width: 206px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, color 0.3s ease;
+
+      &:focus {
+        background-color: variables.$primary-color-disabled;
+        border-color: variables.$primary-color-disabled;
+        outline: none;
+      }
+
+      &:hover {
+        background-color: variables.$primary-color-hover;
+      }
+    }
+
+    &--create {
+      background-color: variables.$primary-color;
+      color: variables.$color-white;
+      border-radius: 30px;
+      padding: 8px 16px;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      text-decoration: none;
+      height: 48px;
+      width: 206px;
+
+      &:hover {
+        background-color: variables.$primary-color-hover;
+      }
+
+      &:focus {
+        background-color: variables.$primary-color-disabled;
+      }
+    }
+  }
+}

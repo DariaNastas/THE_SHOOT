@@ -1,3 +1,94 @@
+@use "./utils/variables.scss" as variables;
+
 @use "utils/index";
-@use "blocks/top-bar";
-@use "blocks/footer";
+@use "./blocks/page.scss";
+@use "./blocks/top-bar.scss";
+@use "./blocks/container.scss";
+@use "./blocks/footer.scss";
+@use "./blocks/header.scss";
+@use "./blocks/talents.scss";
+
+.main-talents {
+  &__arrow {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    top: 85px;
+    left: 40px;
+    z-index: 10;
+    pointer-events: auto;
+    cursor: pointer;
+  }
+
+  &__people {
+    display: flex;
+    justify-content: space-between;
+    padding: 96px 40px 100px;
+  }
+
+  &__content {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  &__title {
+    margin: 0;
+    padding: 136px 40px 16px;
+  }
+
+  &__subtitle {
+    padding: 0 40px 24px;
+    margin: 0;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0 70px 0 0;
+    margin: 0;
+
+    display: flex;
+    flex-direction: column;
+    max-height: 90vh;
+    overflow-y: auto;
+    scrollbar-width: thin;
+
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: variables.$primary-color;
+      border-radius: 50px;
+    }
+
+    &-item {
+      font-size: var(--h3-size);
+      line-height: var(--h3-line-height);
+      letter-spacing: var(--h3-letter-spacing);
+      font-weight: var(--h3-font-weight);
+      margin: 0 0 40px;
+      color: #fff;
+      cursor: pointer;
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      &:active {
+        color: variables.$primary-color;
+        text-decoration: none;
+      }
+
+      &--active {
+        color: variables.$primary-color;
+      }
+    }
+  }
+
+  &__image {
+    position: relative;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+  }
+}

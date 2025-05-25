@@ -64,11 +64,12 @@
     font-size: 16px;
     background-color: $primary-color;
     border-radius: 30px;
-    color: #fff;
+    color: $color-white;
     border: none;
     cursor: pointer;
     transform: translateX(-16px);
     position: relative;
+    text-decoration: none;
 
     &:hover {
       background-color: $primary-color-hover;
