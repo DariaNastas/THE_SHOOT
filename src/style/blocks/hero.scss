@@ -1,16 +1,21 @@
-@use "../utils/index" as *;
+@use "../utils/variables" as *;
+@use "../utils/mixins" as *;
+@use "../utils/covered" as *;
 
 .hero {
   text-align: center;
   padding: 80px 40px 160px;
 
   h1 {
+    font-size: 96px;
     margin: 160px auto 24px;
+    transition: font-size 0.3s ease;
   }
 
   &__paragraph {
     max-width: 600px;
     margin: 0 auto 40px;
+    transition: font-size 0.3s ease;
 
     span {
       display: block;
@@ -26,54 +31,132 @@
     }
   }
 
-  &__icon {
+  .search-bar {
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
 
-    img {
-      width: 20px;
-      height: 20px;
-      opacity: 0.6;
+    &__input-wrapper {
+      display: flex;
+      align-items: center;
+      background-color: $grey-scale-very-dark-100;
+      padding: 0 12px;
+      height: 48px;
+      width: 452px;
+      transition: width 0.3s ease;
     }
 
-    &--left {
-      margin-right: 8px;
-    }
-
-    &--right {
-      margin-left: 8px;
-    }
-  }
-
-  &__search-input {
-    flex-grow: 1;
-    border: none;
-    background-color: transparent;
-    color: $color-white;
-    padding: 8px 0;
-    font-size: 14px;
-    outline: none;
-
-    &::placeholder {
+    &__input {
+      border: none;
+      background-color: transparent;
       color: $grey-scale-light-60;
+      font-size: 14px;
+      padding: 8px;
+      flex-grow: 1;
+      width: 100%;
+
+      &::placeholder {
+        color: $grey-scale-light-60;
+      }
+    }
+
+    &__button {
+      height: 48px;
+      width: 88px;
+      border: 2px solid $primary-color;
+      border-radius: 30px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, color 0.3s ease;
+
+      &:hover {
+        background-color: $primary-color-hover;
+        color: $color-white;
+      }
     }
   }
 
-  &__search-button {
-    background-color: transparent;
-    color: $grey-scale-dark-80;
-    border: 2px solid $primary-color;
-    border-radius: 30px;
-    padding: 5px 15px;
-    font-size: 14px;
-    margin-left: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
+  // Для екранів 768px до 426px
+  @include on-mobile {
+    h1 {
+      font-size: 64px;
+    }
 
-    &:hover {
-      background-color: $primary-color-hover;
-      color: $color-white;
+    &__paragraph span {
+      font-size: 14px;
+    }
+
+    .search-bar {
+      flex-wrap: nowrap;
+      flex-direction: row;
+
+      &__input-wrapper {
+        width: 452px;
+      }
+
+      &__button {
+        width: 88px;
+      }
+    }
+  }
+
+  // Для екранів 425px
+  @include on-small-mobile {
+    padding: 80px 16px 156px;
+
+    h1 {
+      font-size: 36px;
+    }
+
+    &__paragraph span {
+      font-size: 12px;
+    }
+
+    .search-bar {
+      flex-direction: column;
+      align-items: center;
+
+      &__input-wrapper {
+        width: 288px;
+        margin-bottom: 8px;
+      }
+
+      &__button {
+        width: 312px;
+        margin-left: 0;
+      }
+
+      &__input {
+        font-size: 12px;
+      }
+    }
+  }
+
+  // 320
+  @include on-mini-mobile {
+    h1 {
+      font-size: 36px;
+    }
+
+    &__paragraph span {
+      font-size: 12px;
+    }
+
+    .search-bar {
+      flex-direction: column;
+      align-items: center;
+
+      &__input-wrapper {
+        width: 258px;
+        margin-bottom: 8px;
+      }
+
+      &__button {
+        width: 280px;
+        margin-left: 0;
+      }
     }
   }
 }

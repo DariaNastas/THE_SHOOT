@@ -7,8 +7,8 @@
   <meta charset="UTF-8">
   <meta 
     name="viewport" 
-    content="width=device-width, initial-scale=1.0"
-  />
+    content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
   <title>THE SHOOT</title>
   <link
       rel="icon"
@@ -29,7 +29,7 @@
   ></script>
 </head>
 <body class="page__body">
-<header id="header" class="header">
+  <header id="header" class="header">
   <div class="container">
     <div class="top-bar">
       <img
@@ -52,8 +52,56 @@
         </ul>
       </nav>
     </div>
+    <button
+          class="button__burger-menu burger-button"
+          type="button"
+          id="show"
+        >
+          <span></span>
+        </button>    
   </div>
 </header>
+
+  <dialog
+      class="mobile-overlay visible-tablet"
+      id="tabletOverlay"
+    >
+      <form
+        class="mobile-overlay__close-button-wrapp"
+        method="dialog"
+      >
+        <img
+        src="images/logo-theShoot.png"
+        alt="logo-theShoot"
+        class="mobile-overlay__logo"
+      />
+
+        <button
+          class="mobile-overlay__close-button cross-button"
+          type="submit"
+          id="close"
+        >
+          <span class="visually-covered" alt="Close navigation menu">x</span>
+        </button>
+      </form>
+      <div class="mobile-overlay__body">
+        <ul class="mobile-overlay__list">
+          <li class="mobile-overlay__item">
+            <a href="./about.html"  class="mobile-overlay__link">ABOUT</a>
+          </li>
+          <li class="mobile-overlay__item">
+            <a href="./main_talents.html"  class="mobile-overlay__link">TALENTS</a>
+          </li>
+          <li class="mobile-overlay__item">
+            <a href="./registation.html" class="mobile-overlay__link">Set Up Profile</a>
+          </li>
+          <li class="mobile-overlay__item">
+            <a href="./registation_not-you.html" class="mobile-overlay__link">Log In</a>
+          </li>
+        </ul>
+      </div>
+    </dialog>
+
   <main>
     <section class="hero">
       <h1 class="hero__title">THE SHOOT</h1>

@@ -5,3 +5,7 @@ html {
   background-color: $background-color;
   color: $color-white;
 }
+
+body.dialog-open {
+  overflow: hidden;
+}

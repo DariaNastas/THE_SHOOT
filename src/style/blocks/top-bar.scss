@@ -6,6 +6,13 @@
   align-items: center;
   padding: 0 40px 0 0;
 
+  @include on-small-mobile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px 0 0;
+  }
+
   &__logo {
     width: 80px;
     height: auto;
@@ -22,6 +29,10 @@
   }
 
   &__nav {
+    @include on-small-mobile {
+      display: none;
+    }
+
     ul {
       display: flex;
       gap: 32px;
@@ -33,10 +44,18 @@
     a {
       text-transform: uppercase;
       font-weight: 400;
+      font-size: 18px;
       color: $color-white;
       text-decoration: none;
-      font-size: 14px;
       transition: color 0.3s;
+
+      @include on-tablet {
+        font-size: 14px;
+      }
+
+      @include on-mobile {
+        font-size: 12px;
+      }
 
       &:hover {
         text-decoration: underline;

@@ -2,18 +2,18 @@
 
 .header {
   align-items: center;
-  padding: 0px 20px;
+  padding: 0 20px;
   background-color: $background-color;
   position: fixed;
   z-index: 1;
   width: 100%;
+  top: 0;
 
-  &__logo {
-    font-size: 24px;
-    font-weight: bold;
+  @include on-middle-desktop {
+    padding: 0 40px;
+  }
 
-    &--highlight {
-      color: $primary-color-hover;
-    }
+  @include on-mobile {
+    padding: 0 16px;
   }
 }

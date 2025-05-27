@@ -1,0 +1,78 @@
+@use "variables" as *;
+
+@mixin on-mini-mobile {
+  @media (max-width: $smile-mobile-max-width) {
+    @content;
+  }
+}
+
+// Small Mobile: до 426px включно
+@mixin on-small-mobile {
+  @media (max-width: $mobile-max-width) {
+    @content;
+  }
+}
+
+// Mobile: до 768px включно (виводимо з tablet-min - 1)
+@mixin on-mobile {
+  @media (max-width: calc(#{$tablet-min-width} - 1px)) {
+    @content;
+  }
+}
+
+// Tablet: від 769px до 1024px (desktop-min - 1)
+@mixin on-tablet {
+  @media (min-width: $tablet-min-width) and (max-width: calc(#{$desktop-min-width} - 1px)) {
+    @content;
+  }
+}
+
+// Middle Desktop: від 1025px до 1439px (large-desktop - 1)
+@mixin on-middle-desktop {
+  @media (min-width: $desktop-min-width) and (max-width: calc(#{$large-desktop-width} - 1px)) {
+    @content;
+  }
+}
+
+// Large Desktop: від 1440px і вище
+@mixin on-desktop {
+  @media (min-width: $large-desktop-width) {
+    @content;
+  }
+}
+
+@mixin hover($property, $toValue) {
+  transition: #{$property} $effectDuration;
+  &:hover {
+    #{$property}: $toValue;
+  }
+}
+
+@mixin input-box() {
+  box-sizing: border-box;
+  padding: 14px 16px;
+  width: 100%;
+
+  text-align: left;
+  outline: none;
+  border: none;
+  border-radius: 8px;
+  background-color: $color-white;
+
+  &:hover {
+    border: 1px solid $grey-scale-light-60;
+    padding-left: 15px;
+    padding-block: 13px;
+  }
+
+  &:active,
+  &:focus {
+    border: 2px solid $grey-scale-very-dark-100;
+    padding-left: 14px;
+    padding-block: 12px;
+  }
+}
+
+@mixin cursor-mouse() {
+  cursor: url(../images/icon/cursor-mouse-mice.svg), auto;
+}

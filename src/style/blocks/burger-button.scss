@@ -1,0 +1,55 @@
+@use "../utils/index" as *;
+
+.burger-button {
+  display: none;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  margin-left: auto;
+  margin-right: 16px;
+  background-color: $background-color;
+
+  @include on-small-mobile {
+    display: block;
+  }
+
+  span,
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: $grey-scale-light-60;
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  span {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &::before {
+    top: 0;
+  }
+
+  &::after {
+    bottom: 0;
+  }
+
+  &:hover {
+    span,
+    &::before,
+    &::after {
+      background-color: $primary-color-hover;
+    }
+  }
+}
+
+.button__burger-menu {
+  @include on-small-mobile {
+    display: block;
+  }
+}

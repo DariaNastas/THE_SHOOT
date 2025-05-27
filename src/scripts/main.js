@@ -12,3 +12,25 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+  // dialog
+const dialog = document.getElementById('tabletOverlay');
+const showButton = document.getElementById('show');
+const closeButton = document.getElementById('close');
+const links = document.querySelectorAll('.mobile-overlay__link');
+
+const closeDialog = () => {
+  dialog.style.display = 'none';
+  document.body.classList.remove('hide');
+  dialog.close();
+};
+
+showButton.addEventListener('click', () => {
+    dialog.style.display = 'block';
+    document.body.classList.add('hide');
+    dialog.showModal();
+  });
+
+  closeButton.addEventListener('click', () => closeDialog());
+
+links.forEach((link) => link.addEventListener('click', () => closeDialog()));

@@ -1,4 +1,5 @@
 @use "./utils/index" as *;
+@use "./utils/covered";
 
 @use "./about.scss";
 @use "./main_talents.scss";
@@ -17,3 +18,5 @@
 @use "./blocks/talents.scss";
 @use "./blocks/footer.scss";
 @use "./talents_AS.scss";
+@use "./blocks/burger-button.scss";
+@use "./blocks/mobile-overlay.scss";
