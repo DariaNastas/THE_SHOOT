@@ -3,20 +3,107 @@
 .gallery {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  padding: 0 40px;
   gap: 20px;
+  padding: 0 40px;
+  transition: all 0.3s ease;
 
   &__item {
     position: relative;
     width: 100%;
     height: 840px;
     overflow: hidden;
+    transition: all 0.3s ease;
 
     img {
       display: block;
       width: 100%;
       height: 100%;
       object-fit: cover;
+      transition: all 0.3s ease;
+    }
+
+    &:hover .gallery__caption {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  &__caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 15%;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: $color-white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 16px;
+    font-size: 18px;
+    font-weight: 500;
+
+    opacity: 0;
+    transform: translateY(100%);
+    transition: all 0.3s ease;
+  }
+
+  &__item:hover &__caption {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  &__name {
+    color: $color-white;
+
+    &:focus {
+      color: $primary-color-disabled;
+    }
+
+    &:hover {
+      color: $primary-color-hover;
+    }
+  }
+
+  &__city {
+    font-size: 16px;
+    color: $color-white;
+    margin-top: 4px;
+  }
+
+  @include on-mobile {
+    gap: 16px;
+    padding: 0 24px;
+
+    &__item {
+      height: 448px;
+    }
+
+    &__caption {
+      font-size: 16px;
+    }
+  }
+
+  @include on-small-mobile {
+    gap: 12px;
+    padding: 0 16px;
+
+    &__item {
+      height: 224px;
+    }
+
+    &__caption {
+      font-size: 14px;
+    }
+  }
+
+  @include on-mini-mobile {
+    &__item {
+      height: 176px;
+    }
+
+    &__caption {
+      font-size: 12px;
     }
   }
 }

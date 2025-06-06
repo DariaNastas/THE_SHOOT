@@ -51,14 +51,14 @@
     &__input {
       border: none;
       background-color: transparent;
-      color: $grey-scale-light-60;
+      color: $color-white;
       font-size: 14px;
       padding: 8px;
       flex-grow: 1;
       width: 100%;
 
       &::placeholder {
-        color: $grey-scale-light-60;
+        color: $grey-scale-dark-80;
       }
     }
 
@@ -78,7 +78,6 @@
     }
   }
 
-  // Для екранів 768px до 426px
   @include on-mobile {
     h1 {
       font-size: 64px;
@@ -102,7 +101,6 @@
     }
   }
 
-  // Для екранів 425px
   @include on-small-mobile {
     padding: 80px 16px 156px;
 
@@ -134,7 +132,6 @@
     }
   }
 
-  // 320
   @include on-mini-mobile {
     h1 {
       font-size: 36px;

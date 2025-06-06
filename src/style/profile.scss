@@ -1,19 +1,82 @@
 @use "./utils/variables.scss" as variables;
+@use "./utils/mixins" as *;
+@use "utils/index" as *;
+@use "utils/covered" as *;
 
-@use "utils/index";
 @use "./about.scss";
 @use "./blocks/page.scss";
+@use "./blocks/header.scss";
 @use "./blocks/footer.scss";
 @use "./blocks/container.scss";
 @use "./blocks/top-bar.scss";
+@use "./blocks/mobile-overlay.scss";
+@use "./blocks/burger-button.scss";
 
 .top-bar {
   padding: 0 40px 0 0;
+
+  @include on-mobile {
+    padding: 0;
+  }
+}
+
+.mobile-overlay {
+  &__item-link {
+    background-color: $grey-scale-very-dark-100;
+    color: $color-white;
+    border: 2px solid $primary-color;
+    border-radius: 30px;
+    padding: 8px 48px;
+    font-size: var(--button-size);
+    margin-left: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-align: center;
+    text-decoration: none;
+
+    &:hover {
+      color: $primary-color-hover;
+      text-decoration: none;
+    }
+
+    &:focus {
+      color: $primary-color-disabled;
+      text-decoration: none;
+    }
+  }
+
+  &__item-log {
+    color: $primary-color;
+    text-align: center;
+    text-decoration: underline;
+
+    &:hover {
+      color: $primary-color-hover;
+      text-decoration: none;
+    }
+
+    &:focus {
+      color: $primary-color-disabled;
+      text-decoration: none;
+    }
+  }
 }
 
 .auth {
-  padding: 84px 40px 24px;
+  padding: 96px 40px 24px;
   margin: 0;
+
+  @include on-mobile {
+    padding: 96px 26px 26px 16px;
+  }
+
+  @include on-small-mobile {
+    padding: 96px 16px 24px;
+  }
+
+  @include on-mini-mobile {
+    padding: 100px 10px 24px;
+  }
 
   &__container {
     display: flex;
@@ -36,18 +99,61 @@
     text-align: left;
     color: variables.$grey-scale-light-60;
     text-decoration: none;
+
+    @include on-mobile {
+      font-size: 12px;
+    }
+  }
+
+  &__arrow {
+    pointer-events: auto;
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 96px;
+    left: 40px;
+
+    @include on-mobile {
+      left: 16px;
+    }
   }
 
   &__photographer-link {
     background-color: variables.$primary-color;
     color: variables.$color-white;
+    margin-left: auto;
     padding: 8px;
     border-radius: 30px;
-    font-weight: 500;
     text-decoration: none;
     text-align: center;
-    width: 208px;
+    width: 188px;
+    height: 24px;
     transition: background-color 0.3s, transform 0.2s;
+
+    @include on-tablet {
+      width: 150px;
+      height: 20px;
+      font-size: 14px;
+    }
+
+    @include on-mobile {
+      width: 128px;
+      height: 16px;
+      font-size: 12px;
+    }
+
+    @include on-small-mobile {
+      width: 112px;
+      height: 12px;
+      font-size: 10px;
+    }
+
+    @include on-small-mobile {
+      width: 72px;
+      height: 12px;
+      font-size: 10px;
+    }
 
     &:hover {
       background-color: variables.$primary-color-hover;
@@ -58,6 +164,17 @@
       background-color: variables.$primary-color-disabled;
     }
   }
+
+  &__title {
+    text-align: center;
+    font-size: 48px;
+    margin: 40px 0 0;
+
+    @include on-mobile {
+      font-size: 24px;
+      margin: 20px 0 0;
+    }
+  }
 }
 
 .profile-form {
@@ -65,21 +182,63 @@
   color: variables.$color-white;
   padding: 0 40px;
 
+  @include on-mobile {
+    padding: 0 20px;
+  }
+
+  @include on-small-mobile {
+    padding: 0 16px;
+  }
+
   &__title {
     text-align: center;
     text-transform: uppercase;
     margin: 0 0 24px;
+
+    @include on-mobile {
+      font-size: 24px;
+      text-align: center;
+    }
+
+    @include on-small-mobile {
+      font-size: 24px;
+      text-align: left;
+      padding: 0 16px;
+    }
   }
 
   &__main {
-    display: flex;
-    gap: 32px;
-    flex-wrap: wrap;
+    display: grid;
+    gap: 16px;
+
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "photo fields"
+      "photo message";
+    align-items: start;
+
+    @include on-mobile {
+      column-gap: 20px;
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas:
+        "photo fields"
+        "message message";
+      align-items: start;
+      gap: 16px;
+    }
+
+    @include on-small-mobile {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "fields"
+        "message"
+        "photo";
+    }
   }
 
   &__photo-upload {
     background-color: variables.$grey-scale-light-60;
-    width: 675px;
+    width: 100%;
     height: 704px;
     border-radius: 4px;
     display: flex;
@@ -91,6 +250,19 @@
     cursor: pointer;
     text-align: center;
     color: variables.$grey-scale-dark-80;
+    grid-area: photo;
+
+    @include on-mobile {
+      width: 100%;
+      max-width: 400px;
+      height: 384px;
+    }
+
+    @include on-small-mobile {
+      order: 2;
+      width: auto;
+      height: 272px;
+    }
 
     input {
       display: none;
@@ -106,8 +278,8 @@
 
     img {
       width: 100%;
-      height: 100%;
-      object-fit: contain;
+      max-width: 200px;
+      object-fit: cover;
     }
   }
 
@@ -116,6 +288,14 @@
     flex-direction: column;
     gap: 16px;
     flex-grow: 1;
+    grid-area: fields;
+
+    @include on-mobile {
+      width: 100%;
+      align-items: left;
+      max-width: 400px;
+      gap: 8px;
+    }
   }
 
   &__text {
@@ -130,23 +310,48 @@
     border: 1px solid variables.$grey-scale-dark-80;
     color: variables.$grey-scale-light-60;
     border-radius: 30px;
-    width: 96%s;
+    width: 96%;
     height: 24px;
     padding: 12px 16px;
+
+    @include on-mobile {
+      width: 90%;
+      height: 21px;
+    }
 
     &::placeholder {
       color: variables.$grey-scale-light-60;
     }
   }
 
+  &__message {
+    grid-area: message;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    @include on-small-mobile {
+      padding-right: 16px;
+    }
+  }
+
   &__textarea {
-    height: 100%;
-    resize: none;
+    resize: vertical;
+    width: 95%;
+    height: 172px;
   }
 
   &__subtitle {
     margin: 48px 0 24px;
     color: variables.$grey-scale-light-60;
+
+    @include on-mobile {
+      font-size: 14px;
+    }
+
+    @include on-small-mobile {
+      font-size: 12px;
+    }
   }
 
   &__gallery {
@@ -156,6 +361,17 @@
     max-width: 100%;
     margin-top: 24px;
     padding: 0 0 40px 0;
+
+    @include on-mobile {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__photo-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
   }
 
   &__photo-slot {
@@ -168,10 +384,28 @@
     align-items: center;
     font-size: 32px;
     width: 100%;
-    height: auto;
 
-    & input {
+    input {
       display: none;
+    }
+  }
+
+  &__photo-change {
+    font-size: 20px;
+    color: variables.$primary-color;
+    cursor: pointer;
+    text-decoration: underline;
+
+    @include on-mobile {
+      font-size: 16px;
+    }
+
+    &:focus {
+      color: variables.$primary-color-disabled;
+    }
+
+    &:hover {
+      color: variables.$primary-color-hover;
     }
   }
 
@@ -179,7 +413,12 @@
     display: flex;
     gap: 16px;
     justify-content: right;
-    margin: 0 0 96px;
+    margin: 0 0 40px;
+    flex-wrap: wrap;
+
+    @include on-small-mobile {
+      justify-content: center;
+    }
 
     &--cancel {
       background-color: variables.$grey-scale-very-dark-100;
@@ -192,6 +431,25 @@
       width: 206px;
       cursor: pointer;
       transition: background-color 0.3s ease, color 0.3s ease;
+
+      @include on-tablet {
+        width: 164px;
+        height: 38px;
+        font-size: 14px;
+      }
+
+      @include on-mobile {
+        width: 146px;
+        height: 35px;
+        font-size: 12px;
+      }
+
+      @include on-small-mobile {
+        width: 100%;
+        height: 48px;
+        font-size: 16px;
+        order: 2;
+      }
 
       &:focus {
         background-color: variables.$primary-color-disabled;
@@ -207,15 +465,32 @@
     &--create {
       background-color: variables.$primary-color;
       color: variables.$color-white;
-      border-radius: 30px;
-      padding: 8px 16px;
-      font-size: 16px;
       border: none;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-      text-decoration: none;
+      border-radius: 30px;
+      padding: 5px 15px;
+      font-size: var(--button-size);
       height: 48px;
       width: 206px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, color 0.3s ease;
+
+      @include on-tablet {
+        width: 164px;
+        height: 38px;
+        font-size: 14px;
+      }
+
+      @include on-mobile {
+        width: 146px;
+        height: 35px;
+        font-size: 12px;
+      }
+
+      @include on-small-mobile {
+        width: 100%;
+        height: 48px;
+        font-size: 16px;
+      }
 
       &:hover {
         background-color: variables.$primary-color-hover;

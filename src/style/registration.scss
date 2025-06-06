@@ -1,0 +1,319 @@
+@use "./utils/variables.scss" as variables;
+@use "./utils/mixins" as *;
+
+@use "utils/index";
+@use "./blocks/page.scss";
+@use "./blocks/footer.scss";
+@use "./about.scss";
+
+.auth {
+  background-color: variables.$background-color;
+
+  &__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 0 auto;
+    padding: 0 16px;
+
+    @include on-mobile {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 704px;
+    padding: 0 80px;
+    color: variables.$color-white;
+
+    @include on-small-mobile {
+      width: 375px;
+      padding: 0 16px;
+    }
+
+    @media (max-width: 376px) {
+      width: 298px;
+      padding: 0 16px;
+    }
+
+    @include on-mini-mobile {
+      width: 272px;
+    }
+  }
+
+  &__logo {
+    width: 120px;
+    margin: 0;
+    padding: 160px 0 96px;
+
+    @include on-mobile {
+      padding: 160px 0 40px;
+    }
+
+    @include on-small-mobile {
+      padding-top: 144px;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    padding-top: 32px;
+    text-align: center;
+    font-size: 26px;
+
+    @include on-mobile {
+      font-size: 24px;
+    }
+
+    @include on-small-mobile {
+      font-size: 18px;
+    }
+  }
+
+  &__description {
+    color: variables.$grey-scale-light-60;
+    text-align: center;
+    padding: 8px 0 42px;
+    margin: 0;
+    font-size: 18px;
+
+    @include on-desktop {
+      padding: 32px 42px;
+    }
+
+    @include on-mobile {
+      font-size: 14px;
+      padding: 8px 68px 42px;
+    }
+
+    @include on-small-mobile {
+      font-size: 10px;
+      padding: 16px 42px;
+    }
+  }
+
+  &__button {
+    @include centered-block(100%);
+    color: variables.$color-white;
+    cursor: pointer;
+    background-color: variables.$grey-scale-very-dark-100;
+    border: 1px solid variables.$grey-scale-dark-80;
+    border-radius: 30px;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 16px;
+    transition: background-color 0.2s;
+    display: flex;
+    width: 440px;
+    height: 44px;
+
+    @include on-tablet {
+      width: 360px;
+    }
+
+    @include on-mobile {
+      width: 80%;
+    }
+
+    @include on-small-mobile {
+      width: 90%;
+    }
+
+    &:hover {
+      background-color: variables.$grey-scale-dark-80;
+    }
+
+    &--google {
+      margin-bottom: 12px;
+    }
+
+    &--apple {
+      margin-bottom: 24px;
+    }
+
+    &--continue {
+      background-color: variables.$primary-color;
+      border: none;
+      margin-top: 16px;
+
+      &:hover {
+        background-color: variables.$primary-color-hover;
+      }
+
+      &:focus {
+        background-color: variables.$primary-color-disabled;
+      }
+    }
+
+    &-icon {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  &__divider {
+    @include centered-block();
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 24px;
+
+    @include on-desktop {
+      max-width: 80%;
+      margin: 8px 0;
+    }
+
+    @include on-middle-desktop {
+      max-width: 100%;
+      margin-top: 8px;
+    }
+
+    @include on-mobile {
+      max-width: 80%;
+      margin-top: 8px;
+    }
+
+    @include on-small-mobile {
+      max-width: 86%;
+      margin-top: 8px;
+    }
+
+    &-line {
+      flex-grow: 1;
+      width: 200px;
+      height: 1px;
+      background-color: variables.$grey-scale-dark-80;
+
+      @include on-tablet {
+        width: 160px;
+      }
+    }
+
+    &-text {
+      color: variables.$grey-scale-dark-80;
+      font-size: 14px;
+    }
+  }
+
+  &__input {
+    @include centered-block(100%);
+    color: variables.$color-white;
+    cursor: pointer;
+    background-color: variables.$grey-scale-very-dark-100;
+    border: 1px solid variables.$grey-scale-dark-80;
+    border-radius: 30px;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 16px;
+    transition: background-color 0.2s;
+    display: flex;
+    width: 404px;
+    height: 24px;
+
+    @include on-tablet {
+      width: 332px;
+    }
+
+    @include on-mobile {
+      width: 74%;
+    }
+
+    @include on-small-mobile {
+      width: 84%;
+    }
+
+    &.is-error {
+      border: 1px solid variables.$primary-color-hover;
+    }
+
+    &::placeholder {
+      color: variables.$grey-scale-light-60;
+    }
+  }
+
+  &__email-text {
+    align-self: flex-start;
+    margin: 8px 0 0 36px;
+    color: variables.$grey-scale-light-60;
+    font-size: 14px;
+
+    @include on-desktop {
+      margin: 8px 0 16px 56px;
+    }
+
+    @include on-middle-desktop {
+      margin: 16px 0;
+    }
+
+    @include on-tablet {
+      margin: 8px 0;
+    }
+
+    @include on-mobile {
+      margin: 16px 0 8px 56px;
+      text-align: center;
+      font-size: 12px;
+    }
+
+    @include on-small-mobile {
+      margin: 18px 0 8px 18px;
+    }
+  }
+
+  &__login-quation {
+    @include centered-block();
+    color: variables.$grey-scale-light-60;
+    text-align: center;
+    margin: 36px 0 96px;
+
+    @include on-mobile {
+      margin: 24px 0 48px;
+    }
+    @include on-small-mobile {
+      margin: 24px 0 48px;
+    }
+    @media (max-width: 376px) {
+      font-size: 14px;
+    }
+    @include on-mini-mobile {
+      font-size: 14px;
+    }
+  }
+
+  &__login-link {
+    color: variables.$primary-color;
+    text-decoration: underline;
+    padding-left: 24px;
+
+    @include on-small-mobile {
+      padding-left: 8px;
+    }
+
+    &:hover {
+      color: variables.$primary-color-hover;
+    }
+  }
+
+  &__gallery {
+    display: block;
+    margin-top: 32px;
+    text-align: center;
+
+    @include on-mobile {
+      display: none;
+    }
+
+    @include on-small-mobile {
+      display: none;
+    }
+
+    &-image {
+      width: 100%;
+      height: 100%;
+      margin: 0 auto;
+      display: block;
+    }
+  }
+}

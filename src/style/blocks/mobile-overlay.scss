@@ -5,14 +5,10 @@
 .mobile-overlay {
   display: none;
 
-  @include on-small-mobile {
-    display: flex;
-  }
-
   position: fixed;
   inset: 0;
   width: 100vw;
-  height: 80vh;
+  height: 100vh;
   overflow: hidden;
   margin: 0;
   padding: 20px;
@@ -23,8 +19,12 @@
   align-items: center;
   z-index: 1000;
 
+  @include on-small-mobile {
+    display: flex;
+  }
+
   &:modal {
-    max-height: 80vh;
+    max-height: 100vh;
   }
 
   &__close-button-wrapp {
@@ -38,8 +38,8 @@
   }
 
   &__logo {
-    width: 86px;
-    height: 16px;
+    width: 96px;
+    height: auto;
   }
 
   &__body {
@@ -69,6 +69,10 @@
   &__item {
     width: 100%;
     text-align: center;
+
+    &--burger {
+      margin: -24px 0;
+    }
   }
 
   &__link {
@@ -81,10 +85,6 @@
     font-size: 24px;
     font-weight: 600;
     transition: transform 0.3s ease, color 0.3s ease;
-
-    @include on-small-mobile {
-      font-size: 24px;
-    }
 
     &:hover {
       transform: scale(1.05);
@@ -107,49 +107,53 @@
       border-radius: 4px;
       transition: width 0.3s ease;
     }
+
+    @include on-small-mobile {
+      font-size: 24px;
+    }
   }
 
   &:has(.page__menu:target) {
     overflow: hidden;
   }
-}
 
-.cross-button {
-  background-color: $background-color;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 30px;
-  width: 24px;
-  height: 24px;
-  border: none;
-  padding: 0;
+  .cross-button {
+    background-color: $background-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 30px;
+    width: 24px;
+    height: 24px;
+    border: none;
+    padding: 0;
 
-  &:hover {
-    background-color: $primary-color-hover;
-    border-radius: 8%;
+    &:hover {
+      background-color: $primary-color-hover;
+      border-radius: 8%;
+
+      &::before,
+      &::after {
+        background-color: $color-white;
+      }
+    }
 
     &::before,
     &::after {
-      background-color: $color-white;
+      content: "";
+      position: absolute;
+      width: 18px;
+      height: 2px;
+      background-color: $grey-scale-light-60;
+      border-radius: 4px;
     }
-  }
 
-  &::before,
-  &::after {
-    content: "";
-    position: absolute;
-    width: 18px;
-    height: 2px;
-    background-color: $grey-scale-light-60;
-    border-radius: 4px;
-  }
+    &::before {
+      transform: rotate(45deg);
+    }
 
-  &::before {
-    transform: rotate(45deg);
-  }
-
-  &::after {
-    transform: rotate(-45deg);
+    &::after {
+      transform: rotate(-45deg);
+    }
   }
 }

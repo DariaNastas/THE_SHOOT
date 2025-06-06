@@ -1,18 +1,22 @@
 @use "./utils/variables.scss" as variables;
+@use "utils/index" as *;
+@use "./utils/mixins" as *;
 
-@use "utils/index";
 @use "./blocks/page.scss";
 @use "./blocks/top-bar.scss";
 @use "./blocks/container.scss";
 @use "./blocks/footer.scss";
 @use "./blocks/header.scss";
 @use "./blocks/talents.scss";
-@use "./main_talents.scss";
+@use "./blocks/mobile-overlay.scss";
+@use "./blocks/burger-button.scss";
+@use "./blocks/get-started.scss";
 @use "./profile.scss";
+@use "./main_talents.scss";
 
 .auth__description {
   text-align: left;
-  color: #adb5bd;
+  color: variables.$grey-scale-light-60;
   text-decoration: none;
   padding: 84px 40px 24px;
   margin: 0;
@@ -21,6 +25,11 @@
 .main-talents__title {
   margin: 0;
   padding: 0 40px;
+
+  @include on-tablet {
+    font-size: 88px;
+    padding: 0 40px 20px;
+  }
 }
 
 .portfolio {
@@ -36,7 +45,7 @@
     grid-column: 1 / 2;
     grid-row: 1 / 2;
     color: variables.$color-white;
-    font-size: 1rem;
+    font-size: 18px;
     line-height: 1.6;
   }
 
@@ -51,7 +60,7 @@
   &__tag {
     color: variables.$color-white;
     padding: 8px 16px;
-    border-radius: 20px;
+    border-radius: 30px;
     cursor: pointer;
     font-size: var(--button-size);
     flex: 0 0 auto;
@@ -121,18 +130,231 @@
   }
 }
 
+@include on-tablet {
+  .portfolio__grid {
+    margin: 24px 24px 72px;
+    gap: 8px;
+  }
+
+  .portfolio__description {
+    font-size: 0.85rem;
+  }
+
+  .portfolio__tags {
+    gap: 12px;
+    margin-top: 8px;
+  }
+
+  .portfolio__tag {
+    font-size: 0.75rem;
+    padding: 6px 14px;
+  }
+
+  .portfolio__image {
+    width: 90%;
+    margin: 16px 0 0 16px;
+    box-shadow: -36px -36px 0 -20px variables.$primary-color,
+      0 -36px 0 -20px variables.$primary-color,
+      -36px 0 0 -20px variables.$primary-color;
+  }
+
+  .portfolio__location {
+    font-size: 0.95rem;
+  }
+  .portfolio__phone {
+    font-size: 0.95rem;
+  }
+  .portfolio__email {
+    font-size: 0.95rem;
+  }
+  .portfolio__price {
+    font-size: 0.95rem;
+  }
+
+  .portfolio__button {
+    width: 112px;
+    height: 30px;
+    font-size: 14px;
+  }
+}
+
+@include on-mobile {
+  .portfolio__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "description image"
+      "tags image"
+      "contact image";
+    column-gap: 16px;
+    row-gap: 16px;
+    margin: 16px;
+  }
+
+  .portfolio__description {
+    grid-area: description;
+    font-size: 0.95rem;
+    text-align: left;
+  }
+
+  .portfolio__tags {
+    grid-area: tags;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding-bottom: 16px;
+  }
+
+  .portfolio__tag {
+    font-size: 0.85rem;
+    padding: 8px 16px;
+  }
+
+  .portfolio__contact {
+    grid-area: contact;
+
+    .portfolio__location,
+    .portfolio__phone,
+    .portfolio__email,
+    .portfolio__price {
+      font-size: 0.9rem;
+      margin: 8px 0;
+    }
+  }
+
+  .portfolio__image-wrapper {
+    grid-area: image;
+    align-self: start;
+    justify-self: center;
+  }
+
+  .portfolio__image {
+    width: 100%;
+    max-width: 95%;
+    margin: 20px 0 0 20px;
+    box-shadow: -44px -39px 0 24px variables.$primary-color,
+      0 -34px 0 -20px variables.$primary-color,
+      -34px 0 0 -20px variables.$primary-color;
+  }
+
+  .portfolio__button {
+    width: 112px;
+    height: 30px;
+    font-size: 14px;
+    margin-top: 12px;
+  }
+}
+
+@include on-small-mobile {
+  .portfolio__grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin: 16px;
+  }
+
+  .portfolio__description {
+    font-size: 0.8rem;
+    text-align: left;
+  }
+
+  .portfolio__grid {
+    & > .portfolio__image-wrapper,
+    & > .portfolio__tags {
+      width: 100%;
+    }
+
+    &::before {
+      content: "";
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+      order: 1;
+    }
+
+    & > .portfolio__image-wrapper {
+      order: 2;
+      display: block;
+    }
+
+    & > .portfolio__tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      align-content: flex-start;
+      justify-content: flex-start;
+    }
+
+    .portfolio__contact {
+      order: 4;
+    }
+
+    .portfolio__button {
+      order: 5;
+    }
+  }
+
+  .portfolio__image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .portfolio__contact {
+    text-align: left;
+
+    .portfolio__location,
+    .portfolio__phone,
+    .portfolio__email,
+    .portfolio__price {
+      font-size: 0.85rem;
+    }
+  }
+
+  .portfolio__button {
+    width: 100%;
+    font-size: 16px;
+    height: 36px;
+  }
+}
+
 .profile-form {
   &__gallery {
-    padding: 0 0 96px 40px;
+    padding: 0 40px 96px 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    justify-items: center;
+
+    @include on-mobile {
+      grid-template-columns: repeat(2, 1fr);
+      padding: 0 24px 72px;
+    }
+
+    @include on-small-mobile {
+      grid-template-columns: repeat(2, 1fr);
+      padding: 0 16px 72px;
+    }
   }
 
   &__gallery--title {
     color: variables.$grey-scale-dark-80;
-    margin: 0 0 24px 40px;
+    margin: 56px 40px 24px;
+
+    @include on-mobile {
+      margin: 56px 20px 24px;
+      font-size: 36px;
+    }
+    @include on-small-mobile {
+      margin: 48px 16px 24px;
+      font-size: 24px;
+    }
   }
 
   &__photo-slot--img {
-    width: 440px;
-    height: 544px;
+    width: 100%;
+    max-width: 440px;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
   }
 }

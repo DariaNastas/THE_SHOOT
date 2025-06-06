@@ -9,12 +9,18 @@
     name="viewport" 
     content="width=device-width, initial-scale=1.0"
   />
-  <title>THE SHOOT</title>
+  <title>
+    Meet the Web Team Behind The Shoot Platform
+  </title>
+ <meta 
+    name="description" 
+    content="Get to know the creators of The Shoot – the platform for booking photographers and discovering photography opportunities. Built to support photographers and clients worldwide."
+  />
   <link
       rel="icon"
-      href="images/logo-theShoot.png"
+      href="images/favicon.png"
       type="image/x-icon"
-    />
+  />
   <link 
     rel="stylesheet" 
     href="style/web-team.scss"
@@ -29,31 +35,75 @@
   ></script>
 </head>
 <body class="page__body">
-<header id="header" class="header">
-  <div class="container">
-    <div class="top-bar">
-      <img
-        src="images/logo-theShoot.png"
-        alt="logo-theShoot"
-        class="top-bar__logo"
-      />
-      <nav class="top-bar__nav top-bar__nav--list">
-        <ul>
-          <li><a href="./about.html">About</a></li>
-          <li><a href="./main_talents.html">Talents</a></li>
+  <header id="header" class="header">
+    <div class="container">
+      <div class="top-bar--about">
+        <img
+          src="images/logo-theShoot.png"
+          alt="logo-theShoot"
+          class="top-bar__logo"
+        />
+        <nav class="top-bar__nav top-bar__nav--list">
+          <ul>
+            <li><a href="./about.html">About</a></li>
+            <li><a href="./main_talents.html">Talents</a></li>
 
-          <li class="user-menu">
-            <a href="#" class="photographer-link">I'm Photographer</a>
-            <div class="user-menu__dropdown">
-              <a href="./registation.html" class="user-menu__link">Set Up Profile</a>
-              <a href="./registation_not-you.html" class="user-menu__link--log">Log In</a>
-            </div>
-          </li>
-        </ul>
-      </nav>
+            <li class="user-menu">
+              <a href="#" class="photographer-link">I'M PHOTOGRAPHER</a>
+              <div class="user-menu__dropdown">
+                <a href="./registration.html" class="user-menu__link">Set Up Profile</a>
+                <a href="./registration_not-you.html" class="user-menu__link--log">Log In</a>
+              </div>
+            </li>
+          </ul>
+        </nav>
+      </div>
+        <button
+          class="button__burger-menu burger-button"
+          type="button"
+          id="show"
+          >
+          <span></span>
+        </button>    
     </div>
-  </div>
-</header>
+  </header>
+
+    <dialog
+      class="mobile-overlay visible-tablet"
+      id="tabletOverlay"
+    >
+      <form
+          class="mobile-overlay__close-button-wrapp"
+          method="dialog"
+      >
+          <img
+          src="images/logo-theShoot.png"
+          alt="logo-theShoot"
+          class="mobile-overlay__logo"
+        />
+
+        <button
+          class="mobile-overlay__close-button cross-button"
+          type="submit"
+          id="close"
+        >
+          <span class="visually-covered" alt="Close navigation menu">x</span>
+        </button>
+      </form>
+      <div class="mobile-overlay__body">
+        <ul class="mobile-overlay__list">
+          <li class="mobile-overlay__item">
+            <a href="./about.html"  class="mobile-overlay__link">ABOUT</a>
+          </li>
+          <li class="mobile-overlay__item">
+            <a href="./main_talents.html"  class="mobile-overlay__link">TALENTS</a>
+          </li>
+          <li class="mobile-overlay__item--burger">
+            <a href="./registration.html" class="get-started__cta">I'M PHOTOGRAPHER</a>
+          </li>          
+        </ul>
+      </div>
+    </dialog>
   <main>
     <section class="main-talents">
       <div class="main-talents__content">
@@ -64,48 +114,89 @@
                 class="main-talents__arrow"              
           />
         </a>
-        <h1 class="main-talents__title">WEB TEAM</h1>        
+        <h1 class="web-team__title">WEB TEAM</h1>    
+      </div>    
     </section>
 
-    <section class="profile-card">
-        <div class="profile-card__info">
-            <h3 class="profile-card__name">ANASTASIIA ORENDACH</h3>
-            <h4 class="profile-card__role">UX/UI DESIGNER</h4>
-            <p class="profile-card__description">
-            We connect clients with verified professionals <br>
-            for every type of shoot – from individual portraits <br>
-            and website shoots to food photography <br>
-            opportunities and more. Need a photographer <br>
-            for an hour or a last-minute one hour photo <br>
-            shoot? We've got you covered.
-            </p>
-            <div class="profile-card__contacts">
-            <a href="mailto:Example@mail.com" class="profile-card__email">Example@mail.com</a>
-            <a href="#" class="profile-card__social" aria-label="Instagram">
-                <img src="./images/icon-instagram.png" alt="Instagram icon" />
-            </a>
-            </div>
-        </div>
+   <section class="team-grid">
+    <span class="block__number">01</span>
+    <span class="block__position">DATA ANALYTICS</span>
+    <div class="block__content">
+      <h3 class="block__content-title">OLEKSANDR KONOVALIUK</h3>
+      <p class="block__content-text">...</p>
+      <a class="block__content-link" href="mailto:example@mail.com">example@mail.com</a>
+    </div>
 
-        <div class="profile-card__photo">
-        <img src="#" alt="Profile photo" />
-        </div>
-    </section>
+    <span class="block__number">02</span>
+    <span class="block__position">DIGITAL MARKETER</span>
+    <div class="block__content">
+      <h3 class="block__content-title">ANASTASIIA ORENDACH</h3>
+      <p class="block__content-text">...</p>
+      <a class="block__content-link" href="mailto:example@mail.com">example@mail.com</a>
+    </div>
 
+    <span class="block__number">03</span>
+    <span class="block__position">UI/UX Designer</span>
+    <div class="block__content">
+      <h3 class="block__content-title">ANASTASIIA ORENDACH</h3>
+      <p class="block__content-text">UI/UX Designer with 1.5 years of experience in user research, 
+        usability testing, and creating accessible, user-centered interfaces. Proficient in Design
+         Thinking and Double Diamond methodologies to solve complex challenges. Skilled in delivering 
+         web and mobile designs from concept to final prototype using Figma, Maze, and Jira.</p>
+      <a class="block__content-link" href="mailto:example@mail.com">example@mail.com</a>
+    </div>
+
+  <span class="block__number">04</span>
+    <span class="block__position">FRONT-END DEVELOPER</span>
+    <div class="block__content">
+      <h3 class="block__content-title">DARIA NASTAS</h3>
+      <p class="block__content-text">Front-End Developer with 1+ years of experience in building 
+        responsive, user-friendly web interfaces. Proficient in modern frameworks, 
+         ensuring high-performance applications with clean and maintainable code. 
+         Skilled in transforming UI/UX designs into interactive web experiences 
+         using HTML, CSS, JavaScript, and TypeScript. Experienced in optimizing web applications
+          for cross-browser compatibility and accessibility. 
+          Adept at collaborating with cross-functional teams and delivering end-to-end solutions.</p>
+      <a class="block__content-link" href="mailto:daria.nastas.ua@gmail.com">daria.nastas.ua@gmail.com</a>
+    </div>
+
+    <span class="block__number">05</span>
+    <span class="block__position">PYTHON DEVELOPER</span>
+    <div class="block__content">
+      <h3 class="block__content-title">NAZAR SLAVYCH</h3>
+      <p class="block__content-text">UI/UX Designer...</p>
+      <a class="block__content-link" href="mailto:example@mail.com">example@mail.com</a>
+    </div>
+
+    <span class="block__number">06</span>
+    <span class="block__position">QA ENGINEER </span>
+    <div class="block__content">
+      <h3 class="block__content-title">VLADYSLAV LOBANOV</h3>
+      <p class="block__content-text">UI/UX Designer...</p>
+      <a class="block__content-link" href="mailto:example@mail.com">example@mail.com</a>
+    </div>
+
+    <span class="block__number">07</span>
+    <span class="block__position">DEVOPS ENGINEER</span>
+    <div class="block__content">
+      <h3 class="block__content-title">MARIAN KOSTIUK</h3>
+      <p class="block__content-text">UI/UX Designer...</p>
+      <a class="block__content-link" href="mailto:example@mail.com">example@mail.com</a>
+    </div>
+   </section>
   </main>
 
-  <footer class="footer">
+   <footer class="footer">
     <div class="footer-content">
-      <div class="footer-center">
-        <h1 class="footer-title">THE SHOOT</h1>
-      </div>
       <div class="footer-right">
-        <img src="./images/logo-theShoot.png" alt="logo" class="footer-photo">
         <ul class="footer-links">
           <li><a href="./about.html">ABOUT</a></li>
           <li><a href="./main_talents.html">TALENTS</a></li>
           <li><a href="./web-team.html">WEB TEAM</a></li>
         </ul>
+        <div class="footer-center">
+          <div class="footer-title">THE SHOOT</div>
+        </div>
       </div>
     </div>
   </footer>

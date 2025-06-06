@@ -2,75 +2,135 @@
 
 .footer {
   background-color: $grey-scale-very-dark-100;
-  color: white;
+  color: $color-white;
   padding: 75px 40px;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
 
+  @include on-tablet {
+    padding: 64px 40px;
+  }
+
+  @include on-mobile {
+    padding: 32px 40px;
+  }
+
+  @include on-small-mobile {
+    padding: 24px 16px;
+  }
+
   &-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
     max-width: 1600px;
-  }
-
-  &-center {
-    flex: 1;
-    text-align: start;
-  }
-
-  &-title {
-    font-size: 160px;
-    color: $grey-scale-light-60;
-    font-weight: bold;
-    margin: 0;
-
-    @media (max-width: 1200px) {
-      font-size: 140px;
-    }
-
-    @media (max-width: 768px) {
-      font-size: 120px;
-    }
-
-    @media (max-width: 480px) {
-      font-size: 80px;
-    }
   }
 
   &-right {
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 24px;
+    align-items: center;
+    gap: 48px;
 
-    .footer-photo {
-      width: 100px;
-      height: auto;
+    @include on-mobile {
+      align-items: center;
+      gap: 24px;
+    }
+
+    @include on-small-mobile {
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+      width: 100%;
+    }
+
+    .footer-center {
+      order: 1;
+
+      @include on-small-mobile {
+        order: 2;
+        width: 100%;
+        text-align: center;
+      }
     }
 
     .footer-links {
+      order: 2;
       list-style: none;
-      padding: 0;
       margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
       text-align: right;
 
-      li {
-        margin: 0;
+      @include on-tablet {
+        width: 136px;
+      }
 
+      @include on-small-mobile {
+        order: 1;
+        flex-direction: row;
+        text-align: center;
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 16px;
+      }
+
+      li {
         a {
           color: $color-white;
+          font-size: 24px;
           text-decoration: none;
-          font-size: 22px;
+
+          @include on-tablet {
+            font-size: 21px;
+          }
+
+          @include on-mobile {
+            font-size: 18px;
+          }
+
+          @include on-small-mobile {
+            font-size: 16px;
+          }
+
+          @include on-mini-mobile {
+            font-size: 16px;
+          }
 
           &:hover {
             text-decoration: underline;
           }
         }
       }
+    }
+  }
+
+  &-title {
+    font-size: 158px;
+    color: $grey-scale-light-60;
+    font-weight: bold;
+    margin: 0;
+
+    @include on-middle-desktop {
+      font-size: 128px;
+    }
+
+    @include on-tablet {
+      font-size: 96px;
+    }
+
+    @include on-mobile {
+      font-size: 84px;
+    }
+
+    @include on-small-mobile {
+      font-size: 46px;
+    }
+
+    @include on-mini-mobile {
+      font-size: 44px;
     }
   }
 }

@@ -9,12 +9,16 @@
     name="viewport" 
     content="width=device-width, initial-scale=1.0"
   />
-  <title>THE SHOOT</title>
+  <title>Find Talented Photographers - Event Photos, Portraits & More | The Shoot</title>
+  <meta 
+    name="description" 
+    content="Browse verified profiles and book a photographer for events, food shoots, or a love story shoot. The Shoot makes it easy to connect with creatives near you for any photoshoot event."
+  >
   <link
       rel="icon"
-      href="images/logo-theShoot.png"
+      href="images/favicon.png"
       type="image/x-icon"
-    />
+  />
   <link 
     rel="stylesheet" 
     href="style/main_talents.scss"
@@ -29,11 +33,11 @@
   ></script>
 </head>
 <body class="page__body">
-<header id="header" class="header">
+  <header id="header" class="header">
   <div class="container">
     <div class="top-bar">
       <img
-        src="images/logo-theShoot.png"
+        src="images/logo-theShoot.png"        
         alt="logo-theShoot"
         class="top-bar__logo"
       />
@@ -43,17 +47,62 @@
           <li><a href="./main_talents.html">Talents</a></li>
 
           <li class="user-menu">
-            <a href="#" class="photographer-link">I'm Photographer</a>
+            <a href="#" class="photographer-link">I'M PHOTOGRAPHER</a>
             <div class="user-menu__dropdown">
-              <a href="./registation.html" class="user-menu__link">Set Up Profile</a>
-              <a href="./registation_not-you.html" class="user-menu__link--log">Log In</a>
+              <a href="./registration.html" class="user-menu__link">Set Up Profile</a>
+              <a href="./registration_not-you.html" class="user-menu__link--log">Log In</a>
             </div>
           </li>
         </ul>
       </nav>
     </div>
+    <button
+          class="button__burger-menu burger-button"
+          type="button"
+          id="show"
+        >
+          <span></span>
+        </button>    
   </div>
 </header>
+
+  <dialog
+      class="mobile-overlay visible-tablet"
+      id="tabletOverlay"
+    >
+      <form
+        class="mobile-overlay__close-button-wrapp"
+        method="dialog"
+      >
+        <img
+        src="images/logo-theShoot.png"
+        alt="logo-theShoot"
+        class="mobile-overlay__logo"
+      />
+
+        <button
+          class="mobile-overlay__close-button cross-button"
+          type="submit"
+          id="close"
+        >
+          <span class="visually-covered" alt="Close navigation menu">x</span>
+        </button>
+      </form>
+      <div class="mobile-overlay__body">
+        <ul class="mobile-overlay__list">
+          <li class="mobile-overlay__item">
+            <a href="./about.html"  class="mobile-overlay__link">ABOUT</a>
+          </li>
+          <li class="mobile-overlay__item">
+            <a href="./main_talents.html"  class="mobile-overlay__link">TALENTS</a>
+          </li>
+          <li class="mobile-overlay__item--burger">
+            <a href="./registration.html" class="get-started__cta">I'M PHOTOGRAPHER</a>
+          </li>
+          
+        </ul>
+      </div>
+    </dialog>
   <main>
     <section class="main-talents">
       <div class="main-talents__content">
@@ -64,10 +113,13 @@
                 class="main-talents__arrow"              
           />
         </a>
+        <p class="main-talents__description">
+          <a href="./index.html" class="main-talents__description">Back to main page</a>
+        </p>
         <h1 class="main-talents__title">TALENTS</h1>
         <h5 class="main-talents__subtitle">
-            BROWSE LOCAL PROFILES AND FIND THE PERFECT MATCH FOR EVENT<br>
-            PHOTOGRAPHS, PORTRAITS, OR CREATIVE SESSIONS. DON’T MISS YOUR CHANCE TO<br>
+            BROWSE LOCAL PROFILES AND FIND THE PERFECT MATCH FOR EVENT
+            PHOTOGRAPHS, PORTRAITS, OR CREATIVE SESSIONS. DON’T MISS YOUR CHANCE TO
             SHOOT WITH TRUSTED PROFESSIONALS.
         </h5>
       </div>
@@ -75,7 +127,7 @@
       
     <section class="main-talents__people">
         <ul class="main-talents__list">
-            <li class="main-talents__list-item main-talents__list-item--active">ALEX SHEVCHENKO</li>
+            <li class="main-talents__list-item">ALEX SHEVCHENKO</li>
             <li class="main-talents__list-item">OLGA SHIRKO</li>
             <li class="main-talents__list-item">ADAM FINAGH</li>
             <li class="main-talents__list-item">OLIVER BROOK</li>
@@ -98,16 +150,15 @@
 
   <footer class="footer">
     <div class="footer-content">
-      <div class="footer-center">
-        <h1 class="footer-title">THE SHOOT</h1>
-      </div>
       <div class="footer-right">
-        <img src="./images/logo-theShoot.png" alt="logo" class="footer-photo">
         <ul class="footer-links">
           <li><a href="./about.html">ABOUT</a></li>
           <li><a href="./main_talents.html">TALENTS</a></li>
           <li><a href="./web-team.html">WEB TEAM</a></li>
         </ul>
+        <div class="footer-center">
+          <div class="footer-title">THE SHOOT</div>
+        </div>
       </div>
     </div>
   </footer>

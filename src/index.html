@@ -7,12 +7,18 @@
   <meta charset="UTF-8">
   <meta 
     name="viewport" 
-    content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-
-  <title>THE SHOOT</title>
+    content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+  >
+  <meta 
+    name="description" 
+    content="Discover photography opportunities on The Shoot - find photographers on demand, book a photographer near you, or start your shooter job in just a few clicks."
+  >
+  <title>
+    THE SHOOT | Book a Photographer or Start Your Photography Job Today
+  </title>
   <link
       rel="icon"
-      href="images/logo-theShoot.png"
+      href="images/favicon.png"
       type="image/x-icon"
     />
   <link 
@@ -43,22 +49,22 @@
           <li><a href="./main_talents.html">Talents</a></li>
 
           <li class="user-menu">
-            <a href="#" class="photographer-link">I'm Photographer</a>
+            <a href="#" class="photographer-link">I'M PHOTOGRAPHER</a>
             <div class="user-menu__dropdown">
-              <a href="./registation.html" class="user-menu__link">Set Up Profile</a>
-              <a href="./registation_not-you.html" class="user-menu__link--log">Log In</a>
+              <a href="./registration.html" class="user-menu__link">Set Up Profile</a>
+              <a href="./registration_not-you.html" class="user-menu__link--log">Log In</a>
             </div>
           </li>
         </ul>
       </nav>
     </div>
     <button
-          class="button__burger-menu burger-button"
-          type="button"
-          id="show"
-        >
-          <span></span>
-        </button>    
+      class="button__burger-menu burger-button"
+      type="button"
+      id="show"
+      >
+      <span></span>
+      </button>    
   </div>
 </header>
 
@@ -92,12 +98,10 @@
           <li class="mobile-overlay__item">
             <a href="./main_talents.html"  class="mobile-overlay__link">TALENTS</a>
           </li>
-          <li class="mobile-overlay__item">
-            <a href="./registation.html" class="mobile-overlay__link">Set Up Profile</a>
+          <li class="mobile-overlay__item--burger">
+            <a href="./registration.html" class="get-started__cta">I'M PHOTOGRAPHER</a>
           </li>
-          <li class="mobile-overlay__item">
-            <a href="./registation_not-you.html" class="mobile-overlay__link">Log In</a>
-          </li>
+          
         </ul>
       </div>
     </dialog>
@@ -139,8 +143,8 @@
       <button class="filter">Event</button>
       <button class="filter">Portrait</button>
       <button class="filter">Commercial</button>
-      <button class="filter">Boudoir & Fashion</button>
-      <button class="filter">Famyly</button>
+      <button class="filter">Boudoir & Intimate</button>
+      <button class="filter">Family</button>
       <button class="filter">Love story</button>
       <button class="filter">Wedding</button>      
     </section>
@@ -148,26 +152,46 @@
     <section class="gallery">
       <div class="gallery__item">
         <img src="./images/slider/1_wouman.jpg" alt="wouman" class="gallery__image">
+        <div class="gallery__caption">
+          <a href="./talents_AS.html" class="gallery__name">ALEX SHEVCHENKO</a>
+          <div class="gallery__city">KYIV</div>
+        </div>
       </div>
+
       <div class="gallery__item">
         <img src="./images/slider/2_way.jpg" alt="way" class="gallery__image">
+        <div class="gallery__caption">
+          <a href="/photographer-profile" class="gallery__name">OLGA SHIRKO</a>
+          <div class="gallery__city">KYIV</div>
+        </div>
       </div>
+
       <div class="gallery__item">
         <img src="./images/slider/3_family.jpg" alt="family" class="gallery__image">
+        <div class="gallery__caption">
+          <a href="/photographer-profile" class="gallery__name">OLIVER BROOK</a>
+          <div class="gallery__city">LVIV</div>
+        </div>
       </div>
+
       <div class="gallery__item">
         <img src="./images/slider/4_pupu.jpg" alt="pupu" class="gallery__image">
+        <div class="gallery__caption">
+          <a href="/photographer-profile" class="gallery__name">STAN PETREVICH</a>
+          <div class="gallery__city">DNIPRO</div>
+        </div>
       </div>
     </section>
 
+
     <section class="talents">
       <div class="talents__content">
-        <h2 class="talents__title">TALENTS</h2>
-        <h5 class="talents__subtitle">PROFESSIONAL PHOTOGRAPHER READY <br>
-          TO CAPTURE YOUR MOMENTS</h5>
         <ul class="talents__list">
+          <h2 class="talents__title">TALENTS</h2>
+          <h5 class="talents__subtitle">PROFESSIONAL PHOTOGRAPHER READY <br>
+            TO CAPTURE YOUR MOMENTS</h5>
           <li class="talents__list-item">
-            <a class="talents__list-item talents__list-item--active" href="./talents_AS.html">ALEX SHEVCHENKO</a>
+            <a class="talents__list-item" href="./talents_AS.html">ALEX SHEVCHENKO</a>
           </li>
           <li class="talents__list-item">OLGA SHIRKO</li>
           <li class="talents__list-item">ADAM FINAGH</li>
@@ -186,7 +210,7 @@
 
     <section class="get-started">
       <h3 class="get-started__title">HOW TO GET STARTED AS </br>A PHOTOGRAPHER</h3>
-      <p class="get-started__description">Unlock Your Creative Journey with Simple Steps</p>  
+      <p class="get-started__description">UNLOCK YOUR CREATIVE JOURNEY WITH SIMPLE STEPS</p>  
      
       <div class="get-started__steps">
         <div class="get-started__step get-started__step--right">
@@ -211,7 +235,7 @@
         </div>
       </div>    
  
-      <a href="./registation.html" class="get-started__cta">I'm Photographer</a>        
+      <a href="./registration.html" class="get-started__cta">I'M PHOTOGRAPHER</a>        
       
       <h3 class="get-started__title">WELCOME TO YOUR </br>PHOTOGRAPHY JOURNEY</h3>
     </section>
@@ -219,16 +243,15 @@
 
   <footer class="footer">
     <div class="footer-content">
-      <div class="footer-center">
-        <h1 class="footer-title">THE SHOOT</h1>
-      </div>
       <div class="footer-right">
-        <img src="./images/logo-theShoot.png" alt="logo" class="footer-photo">
         <ul class="footer-links">
           <li><a href="./about.html">ABOUT</a></li>
           <li><a href="./main_talents.html">TALENTS</a></li>
           <li><a href="./web-team.html">WEB TEAM</a></li>
         </ul>
+        <div class="footer-center">
+          <div class="footer-title">THE SHOOT</div>
+        </div>
       </div>
     </div>
   </footer>

@@ -1,12 +1,16 @@
 @use "./utils/variables.scss" as variables;
+@use "utils/index" as *;
 
-@use "utils/index";
 @use "./blocks/page.scss";
 @use "./blocks/top-bar.scss";
 @use "./blocks/container.scss";
 @use "./blocks/footer.scss";
 @use "./blocks/header.scss";
 @use "./blocks/talents.scss";
+@use "./blocks/mobile-overlay.scss";
+@use "./blocks/burger-button.scss";
+@use "./blocks/get-started.scss";
+@use "./profile.scss";
 
 .main-talents {
   &__arrow {
@@ -18,12 +22,37 @@
     z-index: 10;
     pointer-events: auto;
     cursor: pointer;
+
+    @include on-mobile {
+      left: 16px;
+    }
+  }
+
+  &__description {
+    text-align: left;
+    color: variables.$grey-scale-light-60;
+    text-decoration: none;
+    padding: 85px 40px 0px;
+
+    @include on-mobile {
+      font-size: 12px;
+      padding: 90px 24px 0px;
+    }
   }
 
   &__people {
     display: flex;
     justify-content: space-between;
     padding: 96px 40px 100px;
+    gap: 16px;
+
+    @include on-mobile {
+      padding: 24px 20px 78px;
+    }
+
+    @include on-small-mobile {
+      padding: 24px 16px 32px;
+    }
   }
 
   &__content {
@@ -34,23 +63,69 @@
   &__title {
     margin: 0;
     padding: 136px 40px 16px;
+
+    @include on-tablet {
+      font-size: 128px;
+    }
+
+    @include on-mobile {
+      font-size: 64px;
+      padding: 72px 40px 16px;
+    }
+
+    @include on-small-mobile {
+      font-size: 38px;
+      padding: 26px 40px 16px;
+    }
   }
 
   &__subtitle {
     padding: 0 40px 24px;
-    margin: 0;
+    margin: 0 auto;
+    width: 670px;
+
+    @include on-mobile {
+      font-size: 14px;
+      width: 542px;
+    }
+
+    @include on-small-mobile {
+      width: 256px;
+      font-size: 12px;
+      padding: 0;
+    }
   }
 
   &__list {
     list-style: none;
-    padding: 0 70px 0 0;
+    padding: 0;
     margin: 0;
 
     display: flex;
     flex-direction: column;
     max-height: 90vh;
     overflow-y: auto;
-    scrollbar-width: thin;
+    width: 48%;
+
+    @include on-middle-desktop {
+      padding: 0 70px 0 0;
+      max-height: 70vh;
+    }
+
+    @include on-mobile {
+      padding: 0 56px 0 0;
+      max-height: 70vh;
+    }
+
+    @include on-small-mobile {
+      padding: 0 32px 0 0;
+      max-height: 40vh;
+    }
+
+    @include on-mini-mobile {
+      padding: 0 4px 0 0;
+      max-height: 32vh;
+    }
 
     &::-webkit-scrollbar {
       width: 6px;
@@ -67,11 +142,27 @@
       letter-spacing: var(--h3-letter-spacing);
       font-weight: var(--h3-font-weight);
       margin: 0 0 40px;
-      color: #fff;
+      color: $color-white;
       cursor: pointer;
+
+      @include on-mobile {
+        font-size: 28px;
+        margin: 0 0 20px;
+      }
+
+      @include on-small-mobile {
+        font-size: 14px;
+        margin: 0 0 16px;
+      }
+
+      @include on-mini-mobile {
+        font-size: 12px;
+        margin: 0 0 12px;
+      }
 
       &:hover {
         text-decoration: underline;
+        color: $primary-color-hover;
       }
 
       &:active {

@@ -1,4 +1,5 @@
 @use "../utils/index" as *;
+@use "../utils/mixins" as *;
 
 .filters {
   display: flex;
@@ -8,44 +9,22 @@
   padding: 24px 40px;
   position: sticky;
   top: 72px;
-  z-index: 2;
+  z-index: 1;
   -webkit-backdrop-filter: blur(16px);
   backdrop-filter: blur(16px);
 
-  @media (max-width: 1024px) {
+  @include on-tablet {
     top: 64px;
+    gap: 14px;
   }
 
-  .filter {
-    color: $color-white;
-    padding: 8px 16px;
-    border: 1px solid $grey-scale-light-60;
-    border-radius: 20px;
-    background-color: $grey-scale-very-dark-100;
-    cursor: pointer;
-    font-size: var(--button-size);
-    flex: 0 0 auto;
-
-    &:hover {
-      background-color: $grey-scale-light-60;
-    }
-
-    @media (max-width: 1440px) {
-      font-size: 14px;
-    }
-
-    @media (max-width: 1024px) {
-      font-size: 12px;
-    }
-  }
-
-  // 📱 Горизонтальна прокрутка на мобілках
-  @media (max-width: 768px) {
+  @include on-mobile {
     flex-wrap: nowrap;
     overflow-x: auto;
     overflow-y: hidden;
     white-space: nowrap;
     justify-content: flex-start;
+    padding: 24px;
 
     &::-webkit-scrollbar {
       height: 6px;
@@ -55,5 +34,43 @@
       background-color: $grey-scale-light-60;
       border-radius: 20px;
     }
+  }
+
+  @include on-small-mobile {
+    padding: 16px;
+  }
+}
+
+.filter {
+  color: $color-white;
+  padding: 8px 16px;
+  border: 1px solid $grey-scale-light-60;
+  border-radius: 30px;
+  background-color: $grey-scale-very-dark-100;
+  cursor: pointer;
+  flex: 0 0 auto;
+
+  &:hover {
+    background-color: $grey-scale-light-60;
+  }
+
+  @include on-mini-mobile {
+    font-size: 12px;
+  }
+
+  @include on-small-mobile {
+    font-size: 12px;
+  }
+
+  @include on-mobile {
+    font-size: 14px;
+  }
+
+  @include on-middle-desktop {
+    font-size: 16px;
+  }
+
+  @include on-desktop {
+    font-size: 18px;
   }
 }

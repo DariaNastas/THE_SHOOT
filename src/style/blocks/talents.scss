@@ -5,17 +5,41 @@
   justify-content: space-between;
   padding: 96px 40px 100px;
 
+  @include on-mobile {
+    padding: 80px 16px 96px;
+  }
+
+  @include on-small-mobile {
+    padding: 34px 0 34px 16px;
+  }
+
   &__content {
     max-width: 50%;
   }
 
   &__title {
     margin: 0 0 8px;
+
+    @include on-mobile {
+      font-size: 36px;
+    }
+
+    @include on-small-mobile {
+      font-size: 24px;
+    }
   }
 
   &__subtitle {
     padding: 0 0 40px;
     margin: 0;
+
+    @include on-mobile {
+      padding: 0 0 32px;
+    }
+
+    @include on-small-mobile {
+      padding: 0 0 24px;
+    }
   }
 
   &__list {
@@ -31,9 +55,11 @@
       margin: 0 0 40px;
       color: $color-white;
       cursor: pointer;
+      text-decoration: none;
 
       &:hover {
         text-decoration: underline;
+        color: $primary-color-hover;
       }
 
       &:active {
@@ -44,6 +70,25 @@
       &--active {
         color: $primary-color;
       }
+
+      @include on-tablet {
+        font-size: 36px;
+      }
+
+      @include on-mobile {
+        font-size: 24px;
+        margin: 0 0 24px;
+      }
+
+      @include on-small-mobile {
+        font-size: 14px;
+        margin: 0 0 24px;
+      }
+
+      @include on-mini-mobile {
+        font-size: 14px;
+        margin: 0 0 16px;
+      }
     }
   }
 
@@ -53,6 +98,26 @@
     width: 50%;
     display: flex;
     justify-content: center;
+
+    @include on-tablet {
+      padding-top: 18%;
+      justify-content: end;
+    }
+
+    @include on-mobile {
+      padding-top: 15%;
+      justify-content: end;
+    }
+
+    @include on-small-mobile {
+      padding-top: 35%;
+      justify-content: end;
+    }
+
+    @include on-mini-mobile {
+      padding-top: 50%;
+      justify-content: end;
+    }
   }
 
   &__image-wrapper {
@@ -63,6 +128,22 @@
     align-items: center;
     overflow: hidden;
 
+    @include on-tablet {
+      height: 608px;
+    }
+
+    @include on-mobile {
+      height: 488px;
+    }
+
+    @include on-small-mobile {
+      height: 264px;
+    }
+
+    @include on-mini-mobile {
+      height: 234px;
+    }
+
     img {
       width: 80%;
       height: auto;
@@ -70,6 +151,11 @@
       object-fit: contain;
       box-shadow: -44px -44px 0 -20px $primary-color,
         0 -44px 0 -20px $primary-color, -44px 0 0 -20px $primary-color;
+
+      @include on-small-mobile {
+        box-shadow: -36px -33px 0 -20px $primary-color,
+          0 -33px 0 -20px $primary-color, -36px 0 0 -20px $primary-color;
+      }
     }
   }
 }

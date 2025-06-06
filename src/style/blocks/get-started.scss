@@ -4,12 +4,36 @@
   padding: 0 50px 96px;
   text-align: center;
 
+  @include on-mobile {
+    padding: 0 20px 56px;
+  }
+
+  @include on-small-mobile {
+    padding: 0 16px 36px;
+  }
+
   &__title {
     margin: 0;
+
+    @include on-mobile {
+      font-size: 36px;
+    }
+
+    @include on-small-mobile {
+      font-size: 24px;
+    }
   }
 
   &__description {
     margin: 16px 0 40px;
+
+    @include on-mobile {
+      font-size: 17px;
+    }
+
+    @include on-small-mobile {
+      font-size: 12px;
+    }
   }
 
   &__steps {
@@ -27,6 +51,7 @@
     align-self: center;
     max-width: 150px;
     height: auto;
+    transform: translateX(16px);
   }
 
   &__step {
@@ -36,6 +61,23 @@
 
     h3 {
       margin: 0 0 4px;
+
+      @include on-mobile {
+        font-size: 36px;
+      }
+
+      @include on-small-mobile {
+        font-size: 24px;
+      }
+    }
+    p {
+      @include on-mobile {
+        font-size: 14px;
+      }
+
+      @include on-small-mobile {
+        font-size: 12px;
+      }
     }
 
     &--right {
@@ -61,25 +103,34 @@
     display: inline-block;
     margin: 36px auto;
     padding: 8px 16px;
-    font-size: 16px;
+    font-size: 18px;
     background-color: $primary-color;
     border-radius: 30px;
     color: $color-white;
     border: none;
     cursor: pointer;
-    transform: translateX(-16px);
     position: relative;
     text-decoration: none;
 
+    @include on-tablet {
+      font-size: 14px;
+    }
+
+    @include on-mobile {
+      font-size: 12px;
+    }
+
+    @include on-small-mobile {
+      font-size: 12px;
+    }
+
     &:hover {
       background-color: $primary-color-hover;
-      transform: translateX(-16px);
       text-decoration: none;
     }
 
     &:focus {
       background-color: $primary-color-disabled;
-      transform: translateX(-16px);
     }
   }
 }
