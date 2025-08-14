@@ -1,0 +1,140 @@
+<!DOCTYPE html><html lang="en" class="page"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+      Photographer Profile - Book a Photographer for Events &amp; More | The Shoot
+    </title>
+  <meta name="description" content="Explore individual photographer profiles on The Shoot. Book a photographer near you for professional videography, portraits, or any photoshoot event.">
+  <link rel="icon" href="/favicon.c3d66290.png" type="image/x-icon">
+  <link rel="stylesheet" href="/talents_AS.7331f162.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&amp;display=swap" rel="stylesheet">
+  <script src="/fe1-fx-team-project-158-TheShoot.f75de5e1.js" defer=""></script>
+</head>
+<body class="page__body">
+  <header id="header" class="header">
+  <div class="container">
+    <div class="top-bar">
+      <img src="/logo-theShoot.36a1cd4d.png" alt="logo-theShoot" class="top-bar__logo">
+      <nav class="top-bar__nav top-bar__nav--list">
+        <ul>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/main_talents.html">Talents</a></li>
+
+          <li class="user-menu">
+            <a href="#" class="photographer-link">I'M PHOTOGRAPHER</a>
+            <div class="user-menu__dropdown">
+              <a href="/registration.html" class="user-menu__link">Set Up Profile</a>
+              <a href="/registration_not-you.html" class="user-menu__link--log">Log In</a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <button class="button__burger-menu burger-button" type="button" id="show">
+      <span></span>
+      </button>    
+  </div>
+</header>
+
+  <dialog class="mobile-overlay visible-tablet" id="tabletOverlay">
+      <form class="mobile-overlay__close-button-wrapp" method="dialog">
+        <img src="/logo-theShoot.36a1cd4d.png" alt="logo-theShoot" class="mobile-overlay__logo">
+
+        <button class="mobile-overlay__close-button cross-button" type="submit" id="close">
+          <span class="visually-covered" alt="Close navigation menu">x</span>
+        </button>
+      </form>
+      <div class="mobile-overlay__body">
+        <ul class="mobile-overlay__list">
+          <li class="mobile-overlay__item">
+            <a href="/about.html" class="mobile-overlay__link">ABOUT</a>
+          </li>
+          <li class="mobile-overlay__item">
+            <a href="/main_talents.html" class="mobile-overlay__link">TALENTS</a>
+          </li>
+          <li class="mobile-overlay__item--burger">
+            <a href="/registration.html" class="get-started__cta">I'M PHOTOGRAPHER</a>
+          </li>
+          
+        </ul>
+      </div>
+    </dialog>
+
+  <main>
+    <section class="main-talents">
+      <div class="main-talents__content">
+        <a href="/main_talents.html" class="arrow-link">
+          <img src="/back-arrow.2e0945e3.png" alt="Navigate-back-arrow" class="main-talents__arrow">
+        </a>
+        <p class="auth__description">
+              <a href="/main_talents.html" class="auth__description">All talents</a>
+            </p>
+        <h1 class="main-talents__title">ALEX SHEVCHENKO</h1>        
+    </div></section>
+
+    <section class="portfolio__grid">
+        <div class="portfolio__description">
+            <span>
+            I capture life’s most precious moments with 
+            creativity, precision, and a keen attention 
+            to detail. Specializing in wedding, portrait, 
+            and event photography, I focus on telling 
+            compelling stories through my lens, combining 
+            technical expertise with an artistic eye to create 
+            timeless memories that can be cherished
+            for years to come.
+            </span>
+        </div>
+
+        <div class="portfolio__tags">
+            <button class="portfolio__tag">Events</button>
+            <button class="portfolio__tag">Nature &amp; Wildlife</button>
+            <button class="portfolio__tag">Love story</button>
+            <button class="portfolio__tag">Portrait</button>
+            <button class="portfolio__tag">Commercial</button>
+        </div>
+
+        <div class="portfolio__image-wrapper">
+            <img class="portfolio__image" src="/Alex_Shevchenko.2deca347.png" alt="Alex Shevchenko">
+        </div>
+
+        <div class="portfolio__contact">
+            <p class="portfolio__location">Based: Kyiv</p>
+            <p class="portfolio__phone">Contact number: +38 (0XX) XX-XX-XXX</p>
+            <p class="portfolio__email">Email: AlexShevchenko@gmail.com</p>
+            <p class="portfolio__price">Price: From $200</p>
+            <button class="portfolio__button">Contact Alex</button>
+        </div>
+    </section>
+
+    <section>
+        <h3 class="profile-form__gallery--title">MY PORTFOLIO</h3>      
+        
+        <div class="profile-form__gallery">            
+           <img class="profile-form__photo-slot profile-form__photo-slot--img" src="/1.25409dec.jpg">
+           <img class="profile-form__photo-slot profile-form__photo-slot--img" src="/2.476e9f6c.jpg">
+           <img class="profile-form__photo-slot profile-form__photo-slot--img" src="/3.c11798b8.jpg">
+           <img class="profile-form__photo-slot profile-form__photo-slot--img" src="/4.16be87e8.jpg">
+           <img class="profile-form__photo-slot profile-form__photo-slot--img" src="/5.36b4c7ad.jpg">
+           <img class="profile-form__photo-slot profile-form__photo-slot--img" src="/6.8f19d17f.jpg">           
+        </div>        
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-right">
+        <ul class="footer-links">
+          <li><a href="/about.html">ABOUT</a></li>
+          <li><a href="/main_talents.html">TALENTS</a></li>
+          <li><a href="/web-team.html">WEB TEAM</a></li>
+        </ul>
+        <div class="footer-center">
+          <div class="footer-title">THE SHOOT</div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+<script src="/talents_AS.57525f1c.js"></script></body></html>
